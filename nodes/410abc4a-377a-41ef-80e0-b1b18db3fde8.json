@@ -1,0 +1,13 @@
+{
+  "id": "410abc4a-377a-41ef-80e0-b1b18db3fde8",
+  "template": "slackTrigger",
+  "config": {
+    "debounceMs": 0,
+    "waitForBusy": false
+  },
+  "dynamicConfig": null,
+  "position": {
+    "x": -559.464744818688,
+    "y": -99.62782037781088
+  }
+}

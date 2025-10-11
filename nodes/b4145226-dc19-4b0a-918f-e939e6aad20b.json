@@ -1,0 +1,14 @@
+{
+  "id": "b4145226-dc19-4b0a-918f-e939e6aad20b",
+  "template": "callAgentTool",
+  "config": {
+    "description": "allows to call engineer to work on the specific coding task",
+    "name": "call_engineer",
+    "response": "sync"
+  },
+  "dynamicConfig": null,
+  "position": {
+    "x": 147.0211539453477,
+    "y": -16.13578244111575
+  }
+}

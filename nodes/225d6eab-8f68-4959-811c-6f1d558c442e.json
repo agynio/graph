@@ -1,0 +1,15 @@
+{
+  "id": "225d6eab-8f68-4959-811c-6f1d558c442e",
+  "template": "githubCloneRepoTool",
+  "config": {
+    "token": {
+      "value": "secrets/rowan/GITHUB_TOKEN",
+      "source": "vault"
+    }
+  },
+  "dynamicConfig": null,
+  "position": {
+    "x": 1169.006975436198,
+    "y": 260.74977321465144
+  }
+}

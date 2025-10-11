@@ -1,0 +1,12 @@
+{
+  "id": "6c8b3821-dc37-42e4-a911-954e85b675b7",
+  "template": "sendSlackMessageTool",
+  "config": {
+    "title": ""
+  },
+  "dynamicConfig": null,
+  "position": {
+    "x": 141.4630487277168,
+    "y": -220.84223561361125
+  }
+}

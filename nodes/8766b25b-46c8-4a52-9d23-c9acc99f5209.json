@@ -1,0 +1,24 @@
+{
+  "id": "8766b25b-46c8-4a52-9d23-c9acc99f5209",
+  "template": "mcpServer",
+  "config": {
+    "title": "codex tools",
+    "namespace": "codex",
+    "command": " curl -fsSL https://github.com/HautechAI/codex-tools-mcp/releases/download/v0.1.0/codex-tools-mcp__linux_amd64.tar.gz -o codex-tools-mcp.tar.gz && tar -xzf codex-tools-mcp.tar.gz && chmod +x codex-tools-mcp && rm -f codex-tools-mcp.tar.gz && ./codex-tools-mcp",
+    "env": [],
+    "requestTimeoutMs": 20000,
+    "startupTimeoutMs": 20000,
+    "restart": {
+      "maxAttempts": 5,
+      "backoffMs": 2000
+    }
+  },
+  "dynamicConfig": {
+    "update_plan": true,
+    "apply_patch": true
+  },
+  "position": {
+    "x": 1169.3629920256067,
+    "y": -693.1555629315895
+  }
+}

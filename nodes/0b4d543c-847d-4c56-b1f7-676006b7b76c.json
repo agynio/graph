@@ -1,0 +1,34 @@
+{
+  "id": "0b4d543c-847d-4c56-b1f7-676006b7b76c",
+  "template": "mcpServer",
+  "config": {
+    "title": "Search",
+    "namespace": "search",
+    "command": "npx -y mcp-remote https://mcp.tavily.com/mcp/?tavilyApiKey=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",
+    "env": [],
+    "requestTimeoutMs": 20000,
+    "startupTimeoutMs": 20000,
+    "restart": {
+      "maxAttempts": 5,
+      "backoffMs": 2000
+    },
+    "dynamic": {
+      "tools": {
+        "tavily_search": true,
+        "tavily_extract": true,
+        "tavily_crawl": true,
+        "tavily_map": true
+      }
+    }
+  },
+  "dynamicConfig": {
+    "tavily_search": true,
+    "tavily_extract": true,
+    "tavily_crawl": true,
+    "tavily_map": true
+  },
+  "position": {
+    "x": 116.46729429986317,
+    "y": 581.6828563919388
+  }
+}

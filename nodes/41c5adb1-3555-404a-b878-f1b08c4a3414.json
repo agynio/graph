@@ -1,0 +1,15 @@
+{
+  "id": "41c5adb1-3555-404a-b878-f1b08c4a3414",
+  "template": "githubCloneRepoTool",
+  "config": {
+    "token": {
+      "value": "secrets/casey/GITHUB_TOKEN",
+      "source": "vault"
+    }
+  },
+  "dynamicConfig": null,
+  "position": {
+    "x": 1174.2123504152541,
+    "y": -582.5232880557427
+  }
+}

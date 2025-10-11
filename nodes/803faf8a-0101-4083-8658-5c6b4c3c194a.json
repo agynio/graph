@@ -1,0 +1,31 @@
+{
+  "id": "803faf8a-0101-4083-8658-5c6b4c3c194a",
+  "template": "containerProvider",
+  "config": {
+    "image": "ghcr.io/hautechai/devcontainer-universal:sha-5a8d3e7",
+    "env": [
+      {
+        "key": "DOPPLER_TOKEN",
+        "value": "secrets/doppler/DOPPLER_TOKEN",
+        "source": "vault"
+      },
+      {
+        "key": "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "value": "secrets/noa/GITHUB_TOKEN",
+        "source": "vault"
+      },
+      {
+        "key": "GITHUB_TOKEN",
+        "value": "secrets/noa/GITHUB_TOKEN",
+        "source": "vault"
+      }
+    ],
+    "platform": "linux/amd64",
+    "enableDinD": false
+  },
+  "dynamicConfig": null,
+  "position": {
+    "x": 878.9450281136477,
+    "y": 936.0243833048764
+  }
+}

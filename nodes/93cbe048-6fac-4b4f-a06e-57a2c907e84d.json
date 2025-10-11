@@ -1,0 +1,14 @@
+{
+  "id": "93cbe048-6fac-4b4f-a06e-57a2c907e84d",
+  "template": "callAgentTool",
+  "config": {
+    "description": "Allows to call engineer specialized on PR reviews",
+    "name": "call_engineer_reviewer",
+    "response": "sync"
+  },
+  "dynamicConfig": null,
+  "position": {
+    "x": 135.04952064570523,
+    "y": 213.60030225163314
+  }
+}

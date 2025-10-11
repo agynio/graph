@@ -1,0 +1,12 @@
+{
+  "id": "019cff3b-1727-45cf-8f3b-2dad74c76fd9",
+  "template": "shellTool",
+  "config": {
+    "env": []
+  },
+  "dynamicConfig": null,
+  "position": {
+    "x": 1169.0069754361982,
+    "y": 160.66468279563708
+  }
+}
