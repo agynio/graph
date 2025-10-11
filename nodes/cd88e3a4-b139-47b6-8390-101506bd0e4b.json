@@ -103,7 +103,7 @@
     "unstar_repository": false,
     "update_gist": false,
     "update_issue": true,
-    "update_pull_request": false,
+    "update_pull_request": true,
     "update_pull_request_branch": false
   },
   "position": {
