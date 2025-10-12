@@ -20,12 +20,13 @@
         "source": "vault"
       }
     ],
+    "initialScript": "curl -L -o gh.tar.gz https://github.com/cli/cli/releases/download/v2.81.0/gh_2.81.0_linux_amd64.tar.gz && \\\ntar -xzf gh.tar.gz && \\\nsudo mv gh_2.81.0_linux_amd64/bin/gh /usr/bin/gh && \\\nsudo chmod +x /usr/bin/gh && \\\nrm -rf gh.tar.gz gh_2.81.0_linux_amd64",
     "platform": "linux/amd64",
     "enableDinD": false
   },
   "dynamicConfig": null,
   "position": {
-    "x": 878.9450281136477,
-    "y": 936.0243833048764
+    "x": 824.2022000239107,
+    "y": 971.9493642387664
   }
 }
