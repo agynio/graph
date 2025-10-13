@@ -11,7 +11,7 @@
       },
       {
         "key": "GITHUB_PERSONAL_ACCESS_TOKEN",
-        "value": "secrets/Emerson/GITHUB_TOKEN",
+        "value": "secrets/emerson/GITHUB_TOKEN",
         "source": "vault"
       },
       {
