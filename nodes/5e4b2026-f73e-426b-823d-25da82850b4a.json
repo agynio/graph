@@ -11,12 +11,12 @@
       },
       {
         "key": "GITHUB_PERSONAL_ACCESS_TOKEN",
-        "value": "secrets/rowan/GITHUB_TOKEN",
+        "value": "secrets/emerson/GITHUB_TOKEN",
         "source": "vault"
       },
       {
         "key": "GITHUB_TOKEN",
-        "value": "secrets/rowan/GITHUB_TOKEN",
+        "value": "secrets/emerson/GITHUB_TOKEN",
         "source": "vault"
       }
     ],
@@ -27,6 +27,6 @@
   "dynamicConfig": null,
   "position": {
     "x": 754.8852658003597,
-    "y": 218.54137208820526
+    "y": 155.2449771094468
   }
 }
