@@ -17,7 +17,7 @@
     "add_sub_issue": false,
     "assign_copilot_to_issue": false,
     "cancel_workflow_run": false,
-    "create_and_submit_pull_request_review": true,
+    "create_and_submit_pull_request_review": false,
     "create_branch": false,
     "create_gist": false,
     "create_issue": false,
