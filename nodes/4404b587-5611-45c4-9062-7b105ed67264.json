@@ -1,0 +1,14 @@
+{
+  "id": "4404b587-5611-45c4-9062-7b105ed67264",
+  "template": "githubCloneRepoTool",
+  "config": {
+    "token": {
+      "value": "",
+      "source": "static"
+    }
+  },
+  "position": {
+    "x": 1169.8288838348267,
+    "y": 1143.7080869083718
+  }
+}
