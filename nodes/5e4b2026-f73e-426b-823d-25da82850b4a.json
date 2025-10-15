@@ -22,11 +22,11 @@
     ],
     "initialScript": "curl -L -o gh.tar.gz https://github.com/cli/cli/releases/download/v2.81.0/gh_2.81.0_linux_amd64.tar.gz && \\\ntar -xzf gh.tar.gz && \\\nsudo mv gh_2.81.0_linux_amd64/bin/gh /usr/bin/gh && \\\nsudo chmod +x /usr/bin/gh && \\\nrm -rf gh.tar.gz gh_2.81.0_linux_amd64",
     "platform": "linux/amd64",
-    "enableDinD": false
+    "enableDinD": true
   },
   "dynamicConfig": null,
   "position": {
     "x": 754.8852658003597,
-    "y": 155.2449771094468
+    "y": 216.54137208820526
   }
 }

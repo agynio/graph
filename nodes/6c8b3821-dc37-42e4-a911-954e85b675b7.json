@@ -2,7 +2,10 @@
   "id": "6c8b3821-dc37-42e4-a911-954e85b675b7",
   "template": "sendSlackMessageTool",
   "config": {
-    "title": ""
+    "bot_token": {
+      "value": "secrets/rowan/SLACK_BOT_TOKEN",
+      "source": "vault"
+    }
   },
   "dynamicConfig": null,
   "position": {
