@@ -2,14 +2,12 @@
   "id": "410abc4a-377a-41ef-80e0-b1b18db3fde8",
   "template": "slackTrigger",
   "config": {
-    "app_token": {
-      "value": "secrets/rowan/SLACK_APP_TOKEN",
-      "source": "vault"
-    }
+    "debounceMs": 0,
+    "waitForBusy": false
   },
   "dynamicConfig": null,
   "position": {
     "x": -559.464744818688,
-    "y": -31.48857188783529
+    "y": -29.48857188783529
   }
 }
