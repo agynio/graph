@@ -22,11 +22,12 @@
     ],
     "initialScript": "curl -L -o gh.tar.gz https://github.com/cli/cli/releases/download/v2.81.0/gh_2.81.0_linux_amd64.tar.gz && \\\ntar -xzf gh.tar.gz && \\\nsudo mv gh_2.81.0_linux_amd64/bin/gh /usr/bin/gh && \\\nsudo chmod +x /usr/bin/gh && \\\nrm -rf gh.tar.gz gh_2.81.0_linux_amd64",
     "platform": "linux/amd64",
-    "enableDinD": true
+    "enableDinD": true,
     "ttlSeconds": 86400
   },
   "dynamicConfig": null,
   "position": {
+<<<<<<< HEAD
 <<<<<<< HEAD
     "x": 706.3857805283124,
     "y": -371.8881006058446
@@ -34,5 +35,9 @@
     "x": 708.3857805283124,
     "y": -373.8881006058446
 >>>>>>> 09b20d5 (chore(graph): v3177 (+0/-0 nodes, +0/-0 edges; changed: nodes=[add:0,upd:1,del:0], edges=[add:0,upd:32,del:0]))
+=======
+    "x": 706.3857805283124,
+    "y": -371.8881006058446
+>>>>>>> 84861b7 (chore(graph): v3256 (+0/-0 nodes, +0/-0 edges; changed: nodes=[add:0,upd:1,del:0], edges=[add:0,upd:36,del:0]))
   }
 }
