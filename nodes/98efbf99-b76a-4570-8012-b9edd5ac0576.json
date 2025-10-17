@@ -2,10 +2,12 @@
   "id": "98efbf99-b76a-4570-8012-b9edd5ac0576",
   "template": "shellTool",
   "config": {
-    "env": []
+    "env": [],
+    "executionTimeoutMs": 3600000,
+    "idleTimeoutMs": 60000
   },
   "position": {
-    "x": 1098.4169389083886,
-    "y": 882.0058809618463
+    "x": 1184.4169389083886,
+    "y": 718.0058809618463
   }
 }
