@@ -2,7 +2,9 @@
   "id": "cc8d56d8-ee2d-4303-8341-ace54c4f3fd7",
   "template": "shellTool",
   "config": {
-    "env": []
+    "env": [],
+    "executionTimeoutMs": 3600000,
+    "idleTimeoutMs": 60000
   },
   "dynamicConfig": null,
   "position": {
