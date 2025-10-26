@@ -4,7 +4,8 @@
   "config": {
     "env": [],
     "executionTimeoutMs": 3600000,
-    "idleTimeoutMs": 60000
+    "idleTimeoutMs": 60000,
+    "workdir": "/workspace"
   },
   "position": {
     "x": 1184.4169389083886,
