@@ -2,11 +2,14 @@
   "id": "eb757bfd-7d92-4364-95fe-3fc68c164328",
   "template": "shellTool",
   "config": {
-    "env": []
+    "env": [],
+    "workdir": "/workspace",
+    "executionTimeoutMs": 3600000,
+    "idleTimeoutMs": 300000
   },
   "dynamicConfig": null,
   "position": {
-    "x": 130.10876669171535,
+    "x": 131.79673661588458,
     "y": 359.21414997172667
   }
 }
