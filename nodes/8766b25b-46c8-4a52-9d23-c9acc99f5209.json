@@ -11,7 +11,9 @@
     "restart": {
       "maxAttempts": 5,
       "backoffMs": 2000
-    }
+    },
+    "heartbeatIntervalMs": 300000,
+    "staleTimeoutMs": 0
   },
   "dynamicConfig": {
     "update_plan": true,
