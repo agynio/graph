@@ -1,6 +1,6 @@
 {
   "id": "f0dc13ae-1ae9-4cac-aab0-74bc7766e6db",
-  "template": "containerProvider",
+  "template": "workspace",
   "config": {
     "image": "ghcr.io/hautechai/devcontainer-universal:sha-5a8d3e7",
     "env": [

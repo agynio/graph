@@ -2,6 +2,6 @@
   "source": "1e876f7b-6202-47dd-91ae-bc951f6a8b19",
   "sourceHandle": "$self",
   "target": "cc8d56d8-ee2d-4303-8341-ace54c4f3fd7",
-  "targetHandle": "containerProvider",
-  "id": "1e876f7b-6202-47dd-91ae-bc951f6a8b19-$self__cc8d56d8-ee2d-4303-8341-ace54c4f3fd7-containerProvider"
+  "targetHandle": "workspace",
+  "id": "1e876f7b-6202-47dd-91ae-bc951f6a8b19-$self__cc8d56d8-ee2d-4303-8341-ace54c4f3fd7-workspace"
 }
