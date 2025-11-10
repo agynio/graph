@@ -6,7 +6,7 @@
     "executionTimeoutMs": 3600000,
     "idleTimeoutMs": 300000,
     "workdir": "/workspace",
-    "outputLimitChars": 5000
+    "outputLimitChars": 50000
   },
   "position": {
     "x": 1169.0069754361982,
