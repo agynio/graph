@@ -5,7 +5,8 @@
     "env": [],
     "executionTimeoutMs": 3600000,
     "idleTimeoutMs": 300000,
-    "workdir": "/workspace"
+    "workdir": "/workspace",
+    "outputLimitChars": 5000
   },
   "position": {
     "x": 1184.4169389083886,
