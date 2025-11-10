@@ -5,9 +5,9 @@
     "env": [],
     "workdir": "/workspace",
     "executionTimeoutMs": 3600000,
-    "idleTimeoutMs": 300000
+    "idleTimeoutMs": 300000,
+    "outputLimitChars": 5000
   },
-  "dynamicConfig": null,
   "position": {
     "x": 131.79673661588458,
     "y": 359.21414997172667
