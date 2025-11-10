@@ -6,10 +6,10 @@
     "workdir": "/workspace",
     "executionTimeoutMs": 3600000,
     "idleTimeoutMs": 300000,
-    "outputLimitChars": 5000
+    "outputLimitChars": 50000
   },
   "position": {
-    "x": 131.79673661588458,
-    "y": 359.21414997172667
+    "x": 136.39071556150373,
+    "y": 357.68282365652027
   }
 }
