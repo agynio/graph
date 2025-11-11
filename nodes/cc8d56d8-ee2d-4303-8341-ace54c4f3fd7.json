@@ -3,7 +3,7 @@
   "template": "shellTool",
   "config": {
     "env": [],
-    "executionTimeoutMs": 36000000,
+    "executionTimeoutMs": 3600000,
     "idleTimeoutMs": 36000000,
     "workdir": "/workspace",
     "outputLimitChars": 50000
