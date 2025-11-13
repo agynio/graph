@@ -7,7 +7,7 @@
       "source": "vault"
     },
     "bot_token": {
-      "value": "",
+      "value": "secrets/rowan/SLACK_BOT_TOKEN",
       "source": "vault"
     }
   },
