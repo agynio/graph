@@ -5,9 +5,9 @@
     "bot_token": {
       "value": "secrets/rowan/SLACK_BOT_TOKEN",
       "source": "vault"
-    }
+    },
+    "default_channel": ""
   },
-  "dynamicConfig": null,
   "position": {
     "x": 141.4630487277168,
     "y": -220.84223561361125
