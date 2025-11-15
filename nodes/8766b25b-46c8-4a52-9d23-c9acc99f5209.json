@@ -4,7 +4,7 @@
   "config": {
     "title": "codex tools",
     "namespace": "codex",
-    "command": " curl -fsSL https://github.com/HautechAI/codex-tools-mcp/releases/download/v0.1.0/codex-tools-mcp__linux_amd64.tar.gz -o codex-tools-mcp.tar.gz && tar -xzf codex-tools-mcp.tar.gz && chmod +x codex-tools-mcp && rm -f codex-tools-mcp.tar.gz && ./codex-tools-mcp",
+    "command": " curl -fsSL https://github.com/HautechAI/codex-tools-mcp/releases/download/v0.1.0/codex-tools-mcp__linux_arm64.tar.gz -o codex-tools-mcp.tar.gz && tar -xzf codex-tools-mcp.tar.gz && chmod +x codex-tools-mcp && rm -f codex-tools-mcp.tar.gz && ./codex-tools-mcp",
     "env": [],
     "requestTimeoutMs": 20000,
     "startupTimeoutMs": 20000,
@@ -14,10 +14,6 @@
     },
     "heartbeatIntervalMs": 300000,
     "staleTimeoutMs": 0
-  },
-  "dynamicConfig": {
-    "update_plan": true,
-    "apply_patch": true
   },
   "state": {
     "mcp": {
