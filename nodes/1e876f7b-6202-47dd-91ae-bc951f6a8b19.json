@@ -20,7 +20,7 @@
         "source": "vault"
       }
     ],
-    "platform": "linux/amd64",
+    "platform": "linux/arm64",
     "enableDinD": true,
     "ttlSeconds": 86400,
     "volumes": {
