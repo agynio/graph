@@ -34,6 +34,12 @@
           "version": "2.51.0",
           "commitHash": "f6b44b2401525650256b977063dbcf830f762369",
           "attributePath": "git"
+        },
+        {
+          "name": "github-cli",
+          "version": "2.23.0",
+          "commitHash": "7d0ed7f2e5aea07ab22ccb338d27fbe347ed2f11",
+          "attributePath": "github-cli"
         }
       ]
     }
