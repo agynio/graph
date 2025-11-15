@@ -2,7 +2,7 @@
   "id": "f0dc13ae-1ae9-4cac-aab0-74bc7766e6db",
   "template": "workspace",
   "config": {
-    "image": "ghcr.io/hautechai/devcontainer-universal:sha-5a8d3e7",
+    "image": "ghcr.io/agynio/devcontainer:latest",
     "env": [
       {
         "key": "DOPPLER_TOKEN",
@@ -22,9 +22,13 @@
     ],
     "initialScript": "curl -L -o gh.tar.gz https://github.com/cli/cli/releases/download/v2.81.0/gh_2.81.0_linux_amd64.tar.gz && \\\ntar -xzf gh.tar.gz && \\\nsudo mv gh_2.81.0_linux_amd64/bin/gh /usr/bin/gh && \\\nsudo chmod +x /usr/bin/gh && \\\nrm -rf gh.tar.gz gh_2.81.0_linux_amd64",
     "platform": "linux/amd64",
-    "enableDinD": true
+    "enableDinD": true,
+    "ttlSeconds": 86400,
+    "volumes": {
+      "enabled": false,
+      "mountPath": "/workspace"
+    }
   },
-  "dynamicConfig": null,
   "position": {
     "x": -251.5860094084627,
     "y": 580.1114692405581
