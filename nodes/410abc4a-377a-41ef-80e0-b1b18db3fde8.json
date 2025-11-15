@@ -5,9 +5,12 @@
     "app_token": {
       "value": "secrets/rowan/SLACK_APP_TOKEN",
       "source": "vault"
+    },
+    "bot_token": {
+      "value": "secrets/rowan/SLACK_BOT_TOKEN",
+      "source": "vault"
     }
   },
-  "dynamicConfig": null,
   "position": {
     "x": -466.26359735775054,
     "y": -195.4885718878353
