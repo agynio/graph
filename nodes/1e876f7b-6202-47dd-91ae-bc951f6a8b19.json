@@ -2,7 +2,7 @@
   "id": "1e876f7b-6202-47dd-91ae-bc951f6a8b19",
   "template": "workspace",
   "config": {
-    "image": "ghcr.io/hautechai/devcontainer-universal:sha-5a8d3e7",
+    "image": "ghcr.io/agynio/devcontainer:latest",
     "env": [
       {
         "key": "GITHUB_TOKEN",
@@ -30,7 +30,7 @@
     }
   },
   "position": {
-    "x": 706.3857805283124,
-    "y": -371.8881006058446
+    "x": 727.8243489412018,
+    "y": -408.63993217079786
   }
 }
