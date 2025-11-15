@@ -3340,7 +3340,8 @@
       "toolsUpdatedAt": 1763213510163,
       "enabledTools": [
         "add_comment_to_pending_review",
-        "create_pending_pull_request_review"
+        "create_pending_pull_request_review",
+        "submit_pending_pull_request_review"
       ]
     }
   },
