@@ -26,6 +26,16 @@
     "volumes": {
       "enabled": false,
       "mountPath": "/workspace"
+    },
+    "nix": {
+      "packages": [
+        {
+          "name": "github-cli",
+          "version": "2.23.0",
+          "commitHash": "7d0ed7f2e5aea07ab22ccb338d27fbe347ed2f11",
+          "attributePath": "github-cli"
+        }
+      ]
     }
   },
   "position": {
