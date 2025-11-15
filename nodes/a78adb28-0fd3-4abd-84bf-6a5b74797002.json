@@ -9,11 +9,11 @@
     "restart": {
       "maxAttempts": 5,
       "backoffMs": 2000
-    }
-  },
-  "dynamicConfig": {
-    "update_plan": true,
-    "apply_patch": false
+    },
+    "requestTimeoutMs": 15000,
+    "startupTimeoutMs": 15000,
+    "heartbeatIntervalMs": 300000,
+    "staleTimeoutMs": 0
   },
   "state": {
     "mcp": {
