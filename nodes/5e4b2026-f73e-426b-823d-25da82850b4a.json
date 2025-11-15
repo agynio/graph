@@ -40,6 +40,12 @@
           "version": "2.23.0",
           "commitHash": "7d0ed7f2e5aea07ab22ccb338d27fbe347ed2f11",
           "attributePath": "github-cli"
+        },
+        {
+          "name": "ripgrep",
+          "version": "15.1.0",
+          "commitHash": "d5faa84122bc0a1fd5d378492efce4e289f8eac1",
+          "attributePath": "ripgrep"
         }
       ]
     }
