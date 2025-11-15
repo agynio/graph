@@ -3340,7 +3340,6 @@
       "toolsUpdatedAt": 1763213510163,
       "enabledTools": [
         "add_comment_to_pending_review",
-        "list_issue_types",
         "list_issues",
         "list_notifications",
         "list_org_repository_security_advisories",
