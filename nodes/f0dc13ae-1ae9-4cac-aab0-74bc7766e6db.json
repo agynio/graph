@@ -21,7 +21,7 @@
       }
     ],
     "platform": "linux/arm64",
-    "enableDinD": true,
+    "enableDinD": false,
     "ttlSeconds": 86400,
     "volumes": {
       "enabled": false,
@@ -45,7 +45,7 @@
     }
   },
   "position": {
-    "x": -251.5860094084627,
-    "y": 580.1114692405581
+    "x": -170.42571470252437,
+    "y": 472.9186271761112
   }
 }
