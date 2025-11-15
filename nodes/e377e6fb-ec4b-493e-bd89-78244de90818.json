@@ -3339,8 +3339,7 @@
       ],
       "toolsUpdatedAt": 1763213510163,
       "enabledTools": [
-        "add_comment_to_pending_review",
-        "update_pull_request_branch"
+        "add_comment_to_pending_review"
       ]
     }
   },
