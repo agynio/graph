@@ -3340,7 +3340,6 @@
       "toolsUpdatedAt": 1763213510163,
       "enabledTools": [
         "add_comment_to_pending_review",
-        "get_pull_request_reviews",
         "get_pull_request_status",
         "get_release_by_tag",
         "get_secret_scanning_alert",
