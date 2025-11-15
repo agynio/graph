@@ -24,7 +24,7 @@
     "enableDinD": true,
     "ttlSeconds": 86400,
     "volumes": {
-      "enabled": false,
+      "enabled": true,
       "mountPath": "/workspace"
     },
     "nix": {
