@@ -26,6 +26,16 @@
     "volumes": {
       "enabled": false,
       "mountPath": "/workspace"
+    },
+    "nix": {
+      "packages": [
+        {
+          "name": "git",
+          "version": "2.51.0",
+          "commitHash": "f6b44b2401525650256b977063dbcf830f762369",
+          "attributePath": "git"
+        }
+      ]
     }
   },
   "position": {
