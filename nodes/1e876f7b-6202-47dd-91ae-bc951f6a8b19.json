@@ -46,12 +46,6 @@
           "version": "15.1.0",
           "commitHash": "d5faa84122bc0a1fd5d378492efce4e289f8eac1",
           "attributePath": "ripgrep"
-        },
-        {
-          "name": "conda",
-          "version": "25.9.1-1",
-          "commitHash": "e99366c665bdd53b7b500ccdc5226675cfc51f45",
-          "attributePath": "conda"
         }
       ]
     }
