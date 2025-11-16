@@ -9,13 +9,11 @@
     "restart": {
       "maxAttempts": 5,
       "backoffMs": 2000
-    }
-  },
-  "dynamicConfig": {
-    "tavily_search": true,
-    "tavily_extract": true,
-    "tavily_crawl": true,
-    "tavily_map": true
+    },
+    "requestTimeoutMs": 15000,
+    "startupTimeoutMs": 15000,
+    "heartbeatIntervalMs": 300000,
+    "staleTimeoutMs": 0
   },
   "state": {
     "mcp": {
@@ -379,7 +377,7 @@
     }
   },
   "position": {
-    "x": 1164.9644302266909,
-    "y": 365.00504447169453
+    "x": 1177.2150407483418,
+    "y": 394.10024446061584
   }
 }

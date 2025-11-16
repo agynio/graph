@@ -4,12 +4,12 @@
   "config": {
     "env": [],
     "executionTimeoutMs": 3600000,
-    "idleTimeoutMs": 300000,
+    "idleTimeoutMs": 3600000,
     "workdir": "/workspace",
     "outputLimitChars": 50000
   },
   "position": {
     "x": 1174.9834037695819,
-    "y": -483.3801191869007
+    "y": -481.5352309410625
   }
 }
