@@ -14,9 +14,8 @@
     "restrictionMessage": "Do not produce a final answer directly. Before finishing, call a tool. If no tool is needed, call the 'finish' tool.",
     "restrictionMaxInjections": 0
   },
-  "dynamicConfig": null,
   "position": {
-    "x": -191.2086157373967,
-    "y": -184.22228761098546
+    "x": -341.2086157373967,
+    "y": -172.22228761098546
   }
 }
