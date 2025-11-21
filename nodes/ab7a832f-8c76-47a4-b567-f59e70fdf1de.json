@@ -1,7 +1,9 @@
 {
   "id": "ab7a832f-8c76-47a4-b567-f59e70fdf1de",
   "template": "memory",
-  "config": {},
+  "config": {
+    "scope": "global"
+  },
   "position": {
     "x": 735.1521527734186,
     "y": -364.1309555179083
