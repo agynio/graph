@@ -54,7 +54,8 @@
           "attributePath": "nodejs_24"
         }
       ]
-    }
+    },
+    "memory_limit": "2Gi"
   },
   "position": {
     "x": -286.0319800187434,
