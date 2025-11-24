@@ -48,7 +48,8 @@
           "attributePath": "ripgrep"
         }
       ]
-    }
+    },
+    "memory_limit": "2Gi"
   },
   "position": {
     "x": 704.0303334133928,
