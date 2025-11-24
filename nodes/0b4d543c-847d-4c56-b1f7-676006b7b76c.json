@@ -19,13 +19,9 @@
         "tavily_crawl": true,
         "tavily_map": true
       }
-    }
-  },
-  "dynamicConfig": {
-    "tavily_search": true,
-    "tavily_extract": true,
-    "tavily_crawl": true,
-    "tavily_map": true
+    },
+    "heartbeatIntervalMs": 300000,
+    "staleTimeoutMs": 0
   },
   "state": {
     "mcp": {
@@ -389,7 +385,7 @@
     }
   },
   "position": {
-    "x": 116.46729429986317,
-    "y": 579.9721430141344
+    "x": -13.221867853213325,
+    "y": 320.6560672095004
   }
 }
