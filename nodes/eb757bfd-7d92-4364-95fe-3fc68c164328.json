@@ -4,7 +4,7 @@
   "config": {
     "env": [],
     "workdir": "/workspace",
-    "executionTimeoutMs": 3600000,
+    "executionTimeoutMs": 300000,
     "idleTimeoutMs": 300000,
     "outputLimitChars": 50000
   },
