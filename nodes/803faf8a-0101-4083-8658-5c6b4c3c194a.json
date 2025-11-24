@@ -42,7 +42,8 @@
           "attributePath": "github-cli"
         }
       ]
-    }
+    },
+    "memory_limit": "2Gi"
   },
   "position": {
     "x": 724.2620316110211,
