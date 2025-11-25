@@ -49,7 +49,7 @@
         }
       ]
     },
-    "memory_limit": "4Gi"
+    "memory_limit": "8Gi"
   },
   "position": {
     "x": 704.0303334133928,
