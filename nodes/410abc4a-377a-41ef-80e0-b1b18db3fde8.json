@@ -3,12 +3,16 @@
   "template": "slackTrigger",
   "config": {
     "app_token": {
-      "value": "secrets/rowan/SLACK_APP_TOKEN",
-      "source": "vault"
+      "kind": "vault",
+      "mount": "secrets",
+      "path": "rowan",
+      "key": "SLACK_APP_TOKEN"
     },
     "bot_token": {
-      "value": "secrets/rowan/SLACK_BOT_TOKEN",
-      "source": "vault"
+      "kind": "vault",
+      "mount": "secrets",
+      "path": "rowan",
+      "key": "SLACK_BOT_TOKEN"
     }
   },
   "position": {

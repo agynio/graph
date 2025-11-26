@@ -5,19 +5,22 @@
     "image": "ghcr.io/agynio/devcontainer:latest",
     "env": [
       {
-        "key": "DOPPLER_TOKEN",
-        "value": "secrets/doppler/DOPPLER_TOKEN",
-        "source": "vault"
+        "kind": "vault",
+        "mount": "secrets",
+        "path": "doppler",
+        "key": "DOPPLER_TOKEN"
       },
       {
-        "key": "GITHUB_PERSONAL_ACCESS_TOKEN",
-        "value": "secrets/emerson/GITHUB_TOKEN",
-        "source": "vault"
+        "kind": "vault",
+        "mount": "secrets",
+        "path": "emerson",
+        "key": "GITHUB_TOKEN"
       },
       {
-        "key": "GITHUB_TOKEN",
-        "value": "secrets/emerson/GITHUB_TOKEN",
-        "source": "vault"
+        "kind": "vault",
+        "mount": "secrets",
+        "path": "emerson",
+        "key": "GITHUB_TOKEN"
       }
     ],
     "platform": "linux/arm64",

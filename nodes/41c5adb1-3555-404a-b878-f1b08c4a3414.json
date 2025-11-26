@@ -3,8 +3,10 @@
   "template": "githubCloneRepoTool",
   "config": {
     "token": {
-      "value": "secrets/casey/GITHUB_TOKEN",
-      "source": "vault"
+      "kind": "vault",
+      "mount": "secrets",
+      "path": "casey",
+      "key": "GITHUB_TOKEN"
     }
   },
   "position": {
