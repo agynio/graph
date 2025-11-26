@@ -1,0 +1,16 @@
+id: 410abc4a-377a-41ef-80e0-b1b18db3fde8
+template: slackTrigger
+config:
+  app_token:
+    kind: vault
+    mount: secrets
+    path: rowan
+    key: SLACK_APP_TOKEN
+  bot_token:
+    kind: vault
+    mount: secrets
+    path: rowan
+    key: SLACK_BOT_TOKEN
+position:
+  x: -710.2635973577505
+  y: -153.4885718878353

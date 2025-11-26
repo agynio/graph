@@ -1,0 +1,11 @@
+id: cc8d56d8-ee2d-4303-8341-ace54c4f3fd7
+template: shellTool
+config:
+  env: []
+  executionTimeoutMs: 300000
+  idleTimeoutMs: 60000
+  workdir: /workspace
+  outputLimitChars: 50000
+position:
+  x: 1154.2520408721857
+  y: -572.7532276896046
