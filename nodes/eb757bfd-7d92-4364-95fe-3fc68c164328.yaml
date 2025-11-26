@@ -7,5 +7,5 @@ config:
   idleTimeoutMs: 60000
   outputLimitChars: 50000
 position:
-  x: -10.510876058842996
-  y: 62.377122602139366
+  x: 11.489123941157004
+  y: 92.37712260213937

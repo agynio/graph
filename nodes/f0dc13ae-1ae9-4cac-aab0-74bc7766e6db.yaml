@@ -41,5 +41,5 @@ config:
         attributePath: nodejs_24
   memory_limit: 2Gi
 position:
-  x: -286.0319800187434
-  y: 216.73208400188992
+  x: -446.0319800187434
+  y: 200.73208400188992
