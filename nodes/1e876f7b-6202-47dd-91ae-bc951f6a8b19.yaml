@@ -37,5 +37,5 @@ config:
         attributePath: ripgrep
   memory_limit: 8Gi
 position:
-  x: 704.0303334133928
-  y: -564.1736341580081
+  x: 700.0303334133928
+  y: -536.1736341580081
