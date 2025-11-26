@@ -3,18 +3,24 @@ template: workspace
 config:
   image: ghcr.io/agynio/devcontainer:latest
   env:
-    - kind: vault
-      mount: secrets
-      path: doppler
-      key: DOPPLER_TOKEN
-    - kind: vault
-      mount: secrets
-      path: emerson
-      key: GITHUB_TOKEN
-    - kind: vault
-      mount: secrets
-      path: emerson
-      key: GITHUB_TOKEN
+    - name: DOPPLER_TOKEN
+      value: 
+        kind: vault
+        mount: secrets
+        path: doppler
+        key: DOPPLER_TOKEN
+    - name: GITHUB_TOKEN
+      value: 
+        kind: vault
+        mount: secrets
+        path: emerson
+        key: GITHUB_TOKEN
+    - name: GITHUB_PERSONAL_ACCESS_TOKEN
+      value:
+        kind: vault
+        mount: secrets
+        path: emerson
+        key: GITHUB_TOKEN
   platform: linux/arm64
   enableDinD: true
   ttlSeconds: 86400
