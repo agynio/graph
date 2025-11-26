@@ -1,0 +1,11 @@
+id: ed6cc9d2-36f6-42a2-8c8a-4f866b7e0cae
+template: githubCloneRepoTool
+config:
+  token:
+    kind: vault
+    mount: secrets
+    path: rowan
+    key: GITHUB_TOKEN
+position:
+  x: -10.432621119730925
+  y: 191.8562726379422
