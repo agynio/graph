@@ -33,5 +33,5 @@ config:
         attributePath: github-cli
   memory_limit: 2Gi
 position:
-  x: 720.2620316110211
-  y: 665.9367749044405
+  x: 718.2620316110211
+  y: 685.9367749044405
