@@ -292,6 +292,7 @@ state:
     toolsUpdatedAt: 1761230758951
     enabledTools:
       - tavily_search
+      - tavily_extract
 position:
   x: 4.547959710637315
   y: 431.2625942232527
