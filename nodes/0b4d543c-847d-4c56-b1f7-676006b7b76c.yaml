@@ -290,6 +290,8 @@ state:
           type: object
           additionalProperties: true
     toolsUpdatedAt: 1761230758951
+    enabledTools:
+      - tavily_search
 position:
   x: 4.547959710637315
   y: 431.2625942232527
