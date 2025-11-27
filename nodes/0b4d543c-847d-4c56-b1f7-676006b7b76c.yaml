@@ -294,6 +294,7 @@ state:
       - tavily_search
       - tavily_extract
       - tavily_crawl
+      - tavily_map
 position:
   x: 4.547959710637315
   y: 431.2625942232527
