@@ -10,12 +10,6 @@ config:
   restart:
     maxAttempts: 5
     backoffMs: 2000
-  dynamic:
-    tools:
-      tavily_search: true
-      tavily_extract: true
-      tavily_crawl: true
-      tavily_map: true
   heartbeatIntervalMs: 300000
   staleTimeoutMs: 0
 state:
