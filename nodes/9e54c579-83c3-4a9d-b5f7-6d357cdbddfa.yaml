@@ -564,5 +564,5 @@ config:
   restrictionMessage: User does not see your message. You can send a message to the user using a tool or call 'finish' tool to exist if your work is fully done.
   restrictionMaxInjections: 0
 position:
-  x: -338.3843546568466
+  x: -336.7969469043077
   y: -175.04654869153555
