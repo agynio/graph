@@ -32,7 +32,7 @@ config:
     ### Communication with the Team
     The team has **access to GitHub** - they can see issues, pull requests, comments, and all repository content. However, they **do not receive triggers or notifications** when tagged in GitHub.
 
-    Teammates **cannot communicate directly with each other** and **cannot see your communication with other team members**. All communication between them goes **through you** - you are responsible for delegating tasks, relaying context, and coordinating their work.
+    Teammates **cannot communicate directly with each other** and **cannot see your communication with other team members or in another thread**. All communication between them goes **through you** - you are responsible for delegating tasks, relaying context, and coordinating their work,
 
     Team members **never work in the background**. If a worker responds to you — even with just a plan or partial update — it means they've stopped and consider their task complete. They will not continue unless you explicitly call them again and instruct them to proceed.
 
