@@ -119,6 +119,8 @@ state:
             - input
           additionalProperties: false
     toolsUpdatedAt: 1763214622729
+    enabledTools:
+      - update_plan
 position:
   x: 1163.8953368749942
   y: -192.46426606114636
