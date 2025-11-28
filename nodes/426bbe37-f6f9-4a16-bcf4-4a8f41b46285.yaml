@@ -287,6 +287,7 @@ state:
     enabledTools:
       - tavily_search
       - tavily_extract
+      - tavily_crawl
 position:
   x: 1158.261676541897
   y: 266.9707118302031
