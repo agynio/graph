@@ -562,7 +562,7 @@ config:
   summarizationMaxTokens: 100000
   restrictOutput: true
   restrictionMessage: |-
-    To send this message to a user, use ``
+    To send this message to a user, use `s`
      You can send a message to the user using a tool or call 'finish' tool to exist if your work is fully done.
   restrictionMaxInjections: 0
 position:
