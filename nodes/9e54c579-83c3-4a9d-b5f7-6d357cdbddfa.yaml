@@ -561,9 +561,7 @@ config:
   summarizationKeepTokens: 30000
   summarizationMaxTokens: 100000
   restrictOutput: true
-  restrictionMessage: |-
-    To send this message to a user, use a `send_message` tool.
-     call 'finish' tool to exist if your work is fully done.
+  restrictionMessage: To send this message to a user, use a `send_message` tool. call 'finish' tool to exist if your work is fully done.
   restrictionMaxInjections: 0
 position:
   x: -336.7969469043077
