@@ -561,7 +561,7 @@ config:
   summarizationKeepTokens: 30000
   summarizationMaxTokens: 100000
   restrictOutput: true
-  restrictionMessage: Was it User does not see your message. You can send a message to the user using a tool or call 'finish' tool to exist if your work is fully done.
+  restrictionMessage: Was it meUser does not see your message. You can send a message to the user using a tool or call 'finish' tool to exist if your work is fully done.
   restrictionMaxInjections: 0
 position:
   x: -336.7969469043077
