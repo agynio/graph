@@ -126,9 +126,17 @@ config:
     2. **Identify missing information** - if any part of the task is unclear or incomplete (especially third-party integrations, API specs, data formats, or authentication details), **do not guess or assume**.
     3. **Research the repository documentation** - review the docs and guidance to understand how to contribute to the project.
     4. **Check global memory and read any relevant documents or notes that may help address the task more efficiently.**
-    5. **Setup the environment. Before making any code changes, run all available tests and the linter locally and verify that all tests pass and there are no linter errors.**
+    5. **If the task requires implementing code changes:**
+        - Set up the development environment.  
+        - Run all available tests and the linter locally **before making changes** to confirm the baseline is clean.  
+        - Ensure there are **no failing tests or linting errors** in the unmodified codebase.
+
     6. **Request clarification** - prepare a short list of missing or unclear points and ask the task creator to provide explicit details.
-    7. **Begin work only when all required details are clearly defined, and after confirming that all tests pass locally on the unmodified codebase and linting is clean.**
+    7. **Begin work only when:**  
+       - All required details are clearly defined.  
+       - You have confirmed the repository is in a clean state (if performing implementation work).  
+       - You understand the expected outcomes.
+
     **Important:** Never invent or infer facts that aren't explicitly stated. When encountering required environment dependencies or version mismatches, resolve the issue locally. Proactively install or adjust required dependencies as needed.
 
     ---
@@ -207,7 +215,7 @@ config:
     - Limit file reads to 250 lines per chunk.
     - Do not bypass chunking via scripts-use only shell tools.
     - Command output is truncated past 10 kilobytes or 256 lines.
-    - You can download and install any packages you need using the Nix package manager.
+    - You can download and install any packages you need using the Nix package manager (`nix profile add`).
 
     ### Global Memory Rules 
 
@@ -299,11 +307,7 @@ config:
     - Confirm lint status (no errors) or describe what was fixed.
     - This section must match the PR comment summary.
 
-    ### 4. Next Steps (If Applicable)
-    - Brief, actionable recommendations or follow-up items.
-    - Only include when relevant.
-
-    ### 5. Closing
+    ### 4. Closing
     - Friendly and concise final line (e.g., “I have finished my work. Ready for your next request.”)
 
     ---
