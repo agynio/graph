@@ -1,6 +1,8 @@
 id: 803faf8a-0101-4083-8658-5c6b4c3c194a
 template: workspace
 config:
+  kind: Workspace
+  title: Workspace
   image: ghcr.io/agynio/devcontainer:latest
   env:
     - name: DOPPLER_TOKEN
@@ -37,6 +39,10 @@ config:
         version: 2.23.0
         commitHash: 7d0ed7f2e5aea07ab22ccb338d27fbe347ed2f11
         attributePath: github-cli
+      - name: gh
+        version: ""
+        commitHash: ""
+        attributePath: ""
   memory_limit: 2Gi
 position:
   x: 718.2620316110211
