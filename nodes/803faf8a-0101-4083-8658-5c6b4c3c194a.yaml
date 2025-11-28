@@ -40,9 +40,9 @@ config:
         commitHash: 7d0ed7f2e5aea07ab22ccb338d27fbe347ed2f11
         attributePath: github-cli
       - name: gh
-        version: ""
-        commitHash: ""
-        attributePath: ""
+        version: 2.83.1
+        commitHash: ee09932cedcef15aaf476f9343d1dea2cb77e261
+        attributePath: gh
   memory_limit: 2Gi
 position:
   x: 718.2620316110211
