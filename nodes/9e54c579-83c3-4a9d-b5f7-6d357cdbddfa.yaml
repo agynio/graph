@@ -60,6 +60,8 @@ config:
 
 
     #### `threadAlias` (Extremely Important)
+    `threadAlias` identifies an isolated context thread for an AI agent.
+    The same agent may have multiple `threadAlias` values, each with its own independent context. Context does not leak between threads.
 
     ##### 1. Format
     `threadAlias` **must** follow this pattern:  
