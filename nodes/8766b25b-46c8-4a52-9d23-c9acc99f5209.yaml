@@ -119,6 +119,9 @@ state:
             - input
           additionalProperties: false
     toolsUpdatedAt: 1763217097202
+    enabledTools:
+      - update_plan
+      - apply_patch
 position:
   x: 1152.6316291282105
   y: -870.3735596801316
