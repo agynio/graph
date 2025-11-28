@@ -1,6 +1,8 @@
 id: f0dc13ae-1ae9-4cac-aab0-74bc7766e6db
 template: workspace
 config:
+  kind: Workspace
+  title: Workspace
   image: ghcr.io/agynio/devcontainer:latest
   env:
     - name: DOPPLER_TOKEN
@@ -45,6 +47,10 @@ config:
         version: 24.11.0
         commitHash: 91c9a64ce2a84e648d0cf9671274bb9c2fb9ba60
         attributePath: nodejs_24
+      - name: gh
+        version: ""
+        commitHash: ""
+        attributePath: ""
   memory_limit: 2Gi
 position:
   x: -446.0319800187434
