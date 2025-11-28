@@ -561,7 +561,7 @@ config:
   summarizationKeepTokens: 30000
   summarizationMaxTokens: 100000
   restrictOutput: true
-  restrictionMessage: User does not see your message. YBefore finishing, call a tool. If no tool is needed, call the 'finish' tool.
+  restrictionMessage: User does not see your message. You can Before finishing, call a tool. If no tool is needed, call the 'finish' tool.
   restrictionMaxInjections: 0
 position:
   x: -338.3843546568466
