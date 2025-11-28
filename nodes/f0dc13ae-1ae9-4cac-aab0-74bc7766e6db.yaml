@@ -48,9 +48,9 @@ config:
         commitHash: 91c9a64ce2a84e648d0cf9671274bb9c2fb9ba60
         attributePath: nodejs_24
       - name: gh
-        version: ""
-        commitHash: ""
-        attributePath: ""
+        version: 2.83.1
+        commitHash: ee09932cedcef15aaf476f9343d1dea2cb77e261
+        attributePath: gh
   memory_limit: 2Gi
 position:
   x: -446.0319800187434
