@@ -1,16 +1,18 @@
 id: 5e4b2026-f73e-426b-823d-25da82850b4a
 template: workspace
 config:
+  kind: Workspace
+  title: Workspace
   image: ghcr.io/agynio/devcontainer:latest
   env:
     - name: DOPPLER_TOKEN
-      value: 
+      value:
         kind: vault
         mount: secrets
         path: doppler
         key: DOPPLER_TOKEN
     - name: GITHUB_TOKEN
-      value: 
+      value:
         kind: vault
         mount: secrets
         path: emerson
@@ -45,6 +47,10 @@ config:
         version: 24.11.0
         commitHash: 91c9a64ce2a84e648d0cf9671274bb9c2fb9ba60
         attributePath: nodejs_24
+      - name: gh
+        version: ""
+        commitHash: ""
+        attributePath: ""
   memory_limit: 2Gi
 position:
   x: 716.8560135264969
