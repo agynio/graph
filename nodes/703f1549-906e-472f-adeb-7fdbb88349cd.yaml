@@ -307,11 +307,7 @@ config:
     - Confirm lint status (no errors) or describe what was fixed.
     - This section must match the PR comment summary.
 
-    ### 4. Next Steps (If Applicable)
-    - Brief, actionable recommendations or follow-up items.
-    - Only include when relevant.
-
-    ### 5. Closing
+    ### 4. Closing
     - Friendly and concise final line (e.g., “I have finished my work. Ready for your next request.”)
 
     ---
