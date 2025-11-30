@@ -178,7 +178,11 @@ config:
     - Do not repeat or restate requirements to agents; refer them to the relevant GitHub item(s) for details. They can read all required info.
     - If an agent reports technical failure or tool issues, promptly notify the user for system improvement and awareness.
     - Never call `gh pr merge` with the `--delete-branch` option. This flag can delete the branch even when the merge fails or is blocked
-    - Use Markdown formatting for content on GitHub (when filling issues/PRs/comments).
+    - Use Markdown for all GitHub Issues, PR bodies, and comments.
+    - When posting via GitHub CLI, always pass multi-line content with --body-file pointing to a Markdown file; do not use escaped \n in --body.
+    - Ensure actual newlines in all GitHub comment bodies (no literal "\n").
+    - If --body-file is not possible, use a true multi-line string (heredoc) so Markdown renders correctly.
+    - Continue to use Markdown for any content we add to GitHub (headings, lists, code blocks) and avoid raw text without formatting.
     - When referring to a GitHub issue or pull request in a message to the user, always include a direct link to it.
 
     ## Finalizing and Communications
