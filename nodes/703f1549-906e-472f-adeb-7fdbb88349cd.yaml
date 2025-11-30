@@ -101,6 +101,9 @@ config:
     - Keep reference to the related issue in the PR using `#<ISSUE_ID>`.
     - Upon completion, update the related pull request (PR) with a summary of work.
     - Use Markdown for all GitHub-visible content.
+    - When posting via GitHub CLI, always pass multi-line content with --body-file pointing to a Markdown file; do not use escaped \n in --body.
+    - Ensure actual newlines in all GitHub comment bodies (no literal "\n").
+    - If --body-file is not possible, use a true multi-line string (heredoc) so Markdown renders correctly.
     - When working inside a PR comment thread, keep all conversation confined to that comment.
 
     ### Testing, Linting & Build Requirements
