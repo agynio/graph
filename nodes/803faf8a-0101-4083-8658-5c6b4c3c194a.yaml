@@ -41,5 +41,5 @@ config:
         attributePath: gh
   memory_limit: 2Gi
 position:
-  x: 718.2620316110211
+  x: 719.84943936356
   y: 685.9367749044405
