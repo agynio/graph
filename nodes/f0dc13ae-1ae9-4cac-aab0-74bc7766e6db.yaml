@@ -29,6 +29,11 @@ config:
     mountPath: /workspace
   nix:
     packages:
+      - kind: flakeRepo
+        repository: github:agynio/github-cli
+        commitHash: b3e0c6a0bec85f2552968c8d826d97251d00301c
+        attributePath: packages.aarch64-linux.gh
+        ref: feature/nix-flake
       - kind: nixpkgs
         name: git
         version: 2.51.0
