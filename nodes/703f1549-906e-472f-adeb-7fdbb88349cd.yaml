@@ -1,8 +1,6 @@
 id: 703f1549-906e-472f-adeb-7fdbb88349cd
 template: agent
 config:
-  kind: Agent
-  title: Casey Quinn (Engineer)
   model: gpt-5-codex
   systemPrompt: |-
     # Role and Objective
@@ -525,6 +523,8 @@ config:
     ```
 
     **Observation**: `README.md` updated with new test instructions.
+  name: Casey Quinn
+  role: Engineer
 position:
   x: 702.1081010934425
   y: -699.7961681860465
