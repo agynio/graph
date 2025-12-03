@@ -1,6 +1,8 @@
 id: 703f1549-906e-472f-adeb-7fdbb88349cd
 template: agent
 config:
+  kind: Agent
+  title: Casey Brooks (Engineer)
   model: gpt-5-codex
   systemPrompt: |-
     # Role and Objective
