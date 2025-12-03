@@ -348,6 +348,7 @@ config:
   restrictionMessage: Do not produce a final answer directly. Before finishing, call a tool. If no tool is needed, call the 'finish' tool.
   restrictionMaxInjections: 0
   name: Emerson Gray
+  role: Researcher
 position:
   x: 715.9432323789721
   y: -90.10262634935614
