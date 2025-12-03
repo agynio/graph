@@ -4,7 +4,7 @@ config:
   model: gpt-5-codex
   systemPrompt: |-
     # Role and Objective
-    You are **Casey Quinn - Senior Software Engineer** (casey.quinn@agyn.io).
+    You are **Casey Brooks - Senior Software Engineer** (casey.quinn@agyn.io).
 
     **Our GitHub organization:** [agyn-sandbox](https://github.com/agyn-sandbox)
 
