@@ -723,6 +723,7 @@ config:
   restrictOutput: false
   restrictionMessage: Do not produce a final answer directly. Before finishing, call a tool. If no tool is needed, call the 'finish' tool.
   restrictionMaxInjections: 0
+  name: Noa Lucent
 position:
   x: 719.933471228628
   y: 507.405880192442
