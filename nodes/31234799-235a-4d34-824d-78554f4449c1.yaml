@@ -1,8 +1,6 @@
 id: 31234799-235a-4d34-824d-78554f4449c1
 template: agent
 config:
-  kind: Agent
-  title: Noa Lucent (Reviewer)
   model: gpt-5-codex
   systemPrompt: |-
     # Role and Objective
@@ -725,6 +723,7 @@ config:
   restrictOutput: false
   restrictionMessage: Do not produce a final answer directly. Before finishing, call a tool. If no tool is needed, call the 'finish' tool.
   restrictionMaxInjections: 0
+  name: Noa Lucent
 position:
   x: 719.933471228628
   y: 507.405880192442
