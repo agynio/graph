@@ -580,6 +580,7 @@ config:
   restrictionMessage: To send this message to a user, use a `send_message` tool. If you want to exist then run `finish` tool.
   restrictionMaxInjections: 0
   name: Rowan Stein
+  role: Manager
 position:
   x: -336.7969469043077
   y: -175.04654869153555
