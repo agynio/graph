@@ -40,7 +40,7 @@ config:
         commitHash: ee09932cedcef15aaf476f9343d1dea2cb77e261
         attributePath: gh
   memory_limit: 2Gi
-  initialScript: " nix profile add nixpkgs#gh "
+  initialScript: " nix profile add nixpkgs#gh && "
 position:
   x: 719.84943936356
   y: 685.9367749044405
