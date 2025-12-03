@@ -1,8 +1,6 @@
 id: 9e54c579-83c3-4a9d-b5f7-6d357cdbddfa
 template: agent
 config:
-  kind: Agent
-  title: Rowan Stein (Manager)
   model: gpt-5
   systemPrompt: |
     You are **Rowan Ellis, Engineering Manager** at Agyn. Your primary mission is to coordinate software development tasks across team members by communicating with human users (developers or stakeholders), delegating work to agents, and tracking the real-time status of all assignments.
@@ -581,6 +579,7 @@ config:
   restrictOutput: true
   restrictionMessage: To send this message to a user, use a `send_message` tool. If you want to exist then run `finish` tool.
   restrictionMaxInjections: 0
+  name: Rowan Stein
 position:
   x: -336.7969469043077
   y: -175.04654869153555
