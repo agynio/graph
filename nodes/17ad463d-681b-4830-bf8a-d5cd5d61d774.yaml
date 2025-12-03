@@ -1,6 +1,8 @@
 id: 17ad463d-681b-4830-bf8a-d5cd5d61d774
 template: agent
 config:
+  kind: Agent
+  title: Emerson Gray (Resear
   model: gpt-5
   systemPrompt: |-
     # Role and Objective
