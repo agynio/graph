@@ -52,5 +52,5 @@ config:
   memory_limit: 2Gi
   initialScript: nix profile add nixpkgs#gh && gh extension install Agyn-sandbox/gh-pr-review
 position:
-  x: -344.43788385625396
-  y: 232.48023905266783
+  x: -433.9227578809296
+  y: 323.86904656723016
