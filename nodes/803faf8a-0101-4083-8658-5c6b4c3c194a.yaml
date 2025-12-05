@@ -43,4 +43,4 @@ config:
   initialScript: nix profile add nixpkgs#gh && gh extension install Agyn-sandbox/gh-pr-review
 position:
   x: 719.84943936356
-  y: 685.9367749044405
+  y: 684.0328414145539
