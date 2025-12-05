@@ -1,6 +1,8 @@
 id: 5e4b2026-f73e-426b-823d-25da82850b4a
 template: workspace
 config:
+  kind: Workspace
+  title: Workspace
   image: ghcr.io/agynio/devcontainer:latest
   env:
     - name: DOPPLER_TOKEN
