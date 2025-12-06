@@ -46,7 +46,7 @@ config:
     ```
     manage(
       command="send_message",
-      worker="Emerson Gray (Researcher)",
+      worker="Emerson Gray",
       message="test message",
       threadAlias="emerson-gray-example"
     )
