@@ -1,8 +1,6 @@
 id: 703f1549-906e-472f-adeb-7fdbb88349cd
 template: agent
 config:
-  kind: Agent
-  title: Casey Brooks (Engineer)
   model: gpt-5-codex
   systemPrompt: |-
     # Role and Objective
@@ -148,8 +146,15 @@ config:
     - After retrieving the desired `id`, feed it into `gh pr-review comments reply ...`
 
     ### Reply to an inline comment
-    1. List comments with one of the commands above and capture the desired `id`
-    2. Reply: `gh pr-review comments reply -R owner/repo --pr N --comment-id 2582545223 --body "Acknowledged; will update."`
+    Use the **thread_id** values with `gh pr-review comments reply` to continue discussions.
+    Example:
+
+    ```sh
+    gh pr-review comments reply \
+     --thread-id PRRT_kwDOAAABbcdEFG12 \
+     --body "Follow-up addressed in commit abc123" \
+     owner/repo#42
+    ```
 
     ---
 
