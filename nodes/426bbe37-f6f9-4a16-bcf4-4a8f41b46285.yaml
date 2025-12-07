@@ -4,7 +4,7 @@ config:
   namespace: search
   command: npx -y mcp-remote https://mcp.tavily.com/mcp/?tavilyApiKey=$TAVILY_TOKEN
   env:
-    - name: TAVILY
+    - name: TAVILY_TOKEN
       value:
         kind: vault
         path: tavily
