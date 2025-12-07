@@ -349,11 +349,11 @@ config:
     ```
 
     ## Reply to an inline comment
-    Use the **thread_id** values with `gh pr-review comments reply` to continue discussions.
+    Use the **thread_id** values with `gh pr-review comments reply <PR number>` to continue discussions. 
     Example:
 
     ```sh
-    gh pr-review comments reply 51 -R owner/repo\
+    gh pr-review comments reply 51 -R owner/repo \
      --thread-id PRRT_kwDOAAABbcdEFG12 \
      --body "Follow-up addressed in commit abc123" 
     ```
@@ -362,7 +362,7 @@ config:
 
     ## Submit Review
 
-    1. **Start a pending review.**
+    1. **Start a pending review.** Use `gh pr-review review --start <PR number> -R <owner>/<repo>`
 
        ```sh
        gh pr-review review --start 42 -R owner/repo
@@ -373,7 +373,7 @@ config:
        }
        ```
 
-    2. **Add inline comments with the pending review ID.** The `review --add-comment`requiers `review-id` identifier `PRR_…`.
+    2. **Add inline comments with the pending review ID.** The `review --add-comment`requiers `review-id` identifier `PRR_…`. Use `gh pr-review review --add-comment <PR number> -R <owner>/<repo> ...`. Example:
 
        ```sh
        gh pr-review review --add-comment 42 -R owner/repo \
@@ -392,7 +392,7 @@ config:
     3. **Submit the review.** Reuse the pending review `PRR_…`
        identifier when finalizing. Successful submissions emit a status-only
        payload. Errors are returned as structured JSON for
-       troubleshooting.
+       troubleshooting. Use `gh pr-review review --submit <PR number> -R <owner>/<repo> ...`. Example:
 
        ```sh
        gh pr-review review --submit 42 -R owner/repo \
