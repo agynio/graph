@@ -4,7 +4,7 @@ config:
   namespace: search
   command: npx -y mcp-remote https://mcp.tavily.com/mcp/?tavilyApiKey=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
   env:
-    - name: TAV
+    - name: TAVI
       value: ""
   restart:
     maxAttempts: 5
