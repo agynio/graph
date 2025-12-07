@@ -2,7 +2,7 @@ id: 426bbe37-f6f9-4a16-bcf4-4a8f41b46285
 template: mcpServer
 config:
   namespace: search
-  command: npx -y mcp-remote https://mcp.tavily.com/mcp/?tavilyApiKey=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
+  command: npx -y mcp-remote https://mcp.tavily.com/mcp/?tavilyApiKey=$TAVILY_TOKEN
   env:
     - name: TAVILY
       value:
