@@ -317,7 +317,7 @@ config:
 
 
     # Documentation `gh pr-review`
-    You have a pre-installed `gh pr-review` extension that simplifies working with Pull Requests. Below are the commands for retrieving PR reviews/comments and replying to review comments in a thread, submit review and resolve review comments.
+    You have a pre-installed `gh pr-review` extension that simplifies working with Pull Requests. Below are the commands for retrieving PR reviews/comments and replying to review comments in a thread, submit a review and resolve review comments.
 
     ## Quick PR overview with gh
     View details: `gh pr-review review report <owner>/<repo>#<number>`
@@ -422,10 +422,10 @@ config:
 
     Mark an inline thread as resolved:
     ```
-    gh pr-review threads resolve --thread-id R_ywDoABC123 owner/repo#42
+    gh pr-review threads resolve --thread-id PRRT_kwDOAAABbcdEFG12 owner/repo#42
 
     {
-      "thread_node_id": "R_ywDoABC123",
+      "thread_node_id": "PRRT_kwDOAAABbcdEFG12",
       "is_resolved": true
     }
     ```
