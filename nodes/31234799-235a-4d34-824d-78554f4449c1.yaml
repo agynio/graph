@@ -317,10 +317,11 @@ config:
 
 
     # Documentation `gh pr-review`
-    You have a pre-installed `gh pr-review` extension that simplifies working with Pull Requests. Below are the commands for retrieving PR reviews/comments and replying to review comments in a thread, submit a review and resolve review comments.
+    You have a pre-installed `gh pr-review` extension that simplifies working wit## Documentation `gh pr-review`
+    You have a pre-installed `gh pr-review` extension that simplifies working with Pull Requests. Below are the commands for retrieving PR reviews/comments and replying to review comments in a thread.
 
     ## Quick PR overview with gh
-    View details: `gh pr-review review report <owner>/<repo>#<number>`
+    View details: `gh pr-review review view <PR number> -R <owner>/<repo>`
 
     Default scope:
     - Includes every reviewer and review state (APPROVED, CHANGES_REQUESTED,
@@ -339,7 +340,7 @@ config:
     Example capturing the latest actionable work:
 
     ```bash
-    gh pr-review review report agyn/repo#51 \
+    gh pr-review review report 51 -R agyn/repo \
       --reviewer emerson \
       --states CHANGES_REQUESTED,COMMENTED \
       --unresolved \
@@ -352,10 +353,9 @@ config:
     Example:
 
     ```sh
-    gh pr-review comments reply \
+    gh pr-review comments reply 51 -R owner/repo\
      --thread-id PRRT_kwDOAAABbcdEFG12 \
-     --body "Follow-up addressed in commit abc123" \
-     owner/repo#42
+     --body "Follow-up addressed in commit abc123" 
     ```
 
     Note: If you want to leave a high-level comment on a PR that isn’t tied to any specific review thread, you can use gh pr comment. This allows you to add general feedback directly to the pull request.
@@ -365,7 +365,7 @@ config:
     1. **Start a pending review.**
 
        ```sh
-       gh pr-review review --start owner/repo#42
+       gh pr-review review --start 42 -R owner/repo
 
        {
          "id": "PRR_kwDOAAABbcdEFG12",
@@ -376,13 +376,11 @@ config:
     2. **Add inline comments with the pending review ID.** The `review --add-comment`requiers `review-id` identifier `PRR_…`.
 
        ```sh
-       gh pr-review review --add-comment \
+       gh pr-review review --add-comment 42 -R owner/repo \
          --review-id PRR_kwDOAAABbcdEFG12 \
          --path internal/service.go \
          --line 42 \
-         --body "nit: use helper" \
-         owner/repo#42
-
+         --body "nit: use helper"
        {
          "id": "PRRT_kwDOAAABbcdEFG12",
          "path": "internal/service.go",
@@ -397,11 +395,10 @@ config:
        troubleshooting.
 
        ```sh
-       gh pr-review review --submit \
+       gh pr-review review --submit 42 -R owner/repo \
          --review-id PRR_kwDOAAABbcdEFG12 \
          --event REQUEST_CHANGES \
-         --body "Please add tests" \
-         owner/repo#42
+         --body "Please add tests"
 
        {
          "status": "Review submitted successfully"
@@ -422,7 +419,7 @@ config:
 
     Mark an inline thread as resolved:
     ```
-    gh pr-review threads resolve --thread-id PRRT_kwDOAAABbcdEFG12 owner/repo#42
+    gh pr-review threads resolve 42 -R owner/repo --thread-id PRRT_kwDOAAABbcdEFG12
 
     {
       "thread_node_id": "PRRT_kwDOAAABbcdEFG12",
