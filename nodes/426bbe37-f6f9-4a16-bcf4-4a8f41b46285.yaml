@@ -7,8 +7,9 @@ config:
     - name: TAVILY
       value:
         kind: vault
-        path: ""
-        key: ta
+        path: tavily
+        key: TOKEN
+        mount: secrets
       source: vault
   restart:
     maxAttempts: 5
