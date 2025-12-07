@@ -125,7 +125,7 @@ config:
     You have a pre-installed `gh pr-review` extension that simplifies working with Pull Requests. Below are the commands for retrieving PR reviews/comments and replying to review comments in a thread.
 
     ### Quick PR overview with gh
-    View details: `gh pr-review review report <owner>/<repo>#<number>`
+    View details: `gh pr-review review view <PR number> -R <owner>/<repo>`
 
     Default scope:
     - Includes every reviewer and review state (APPROVED, CHANGES_REQUESTED,
@@ -144,7 +144,7 @@ config:
     Example capturing the latest actionable work:
 
     ```bash
-    gh pr-review review report agyn/repo#51 \
+    gh pr-review review report 51 -R agyn/repo \
       --reviewer emerson \
       --states CHANGES_REQUESTED,COMMENTED \
       --unresolved \
@@ -157,10 +157,9 @@ config:
     Example:
 
     ```sh
-    gh pr-review comments reply \
+    gh pr-review comments reply 51 -R owner/repo\
      --thread-id PRRT_kwDOAAABbcdEFG12 \
-     --body "Follow-up addressed in commit abc123" \
-     owner/repo#42
+     --body "Follow-up addressed in commit abc123" 
     ```
 
     Note: If you want to leave a high-level comment on a PR that isn’t tied to any specific review thread, you can use gh pr comment. This allows you to add general feedback directly to the pull request.
