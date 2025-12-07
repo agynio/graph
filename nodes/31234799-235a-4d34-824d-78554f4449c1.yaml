@@ -412,49 +412,24 @@ config:
     Additional Rule:
     - If any `[major]` level problem is present in the review comments, you must submit with `REQUEST_CHANGES`.
 
+    Optimization Tips:
+    - The `gh pr-review review --add-comment` can be executed in batch instead of one by one to optimize performance. Grouping calls where possible is recommended.
+
     ## Resolving review comments
 
-    List unresolved threads
+    To see a list of your unresolved threads, use `gh pr-review review report` with filters `--unresolved` and `--reviewer <your login>`
+
+
+    Mark an inline thread as resolved:
     ```
-    # Returns [] when none
-    gh pr-review threads list -R owner/repo --pr 123 --unresolved
+    gh pr-review threads resolve --thread-id R_ywDoABC123 owner/repo#42
+
+    {
+      "thread_node_id": "R_ywDoABC123",
+      "is_resolved": true
+    }
     ```
 
-    Resolve a thread
-    ```
-    # Mark an inline thread as resolved
-    gh pr-review threads resolve -R owner/repo --pr 123 --comment-id <INLINE_COMMENT_ID>
-    # Example output:
-    {"threadId":"PRRT_...","isResolved":true,"changed":true}
-
-
-
-    ## Inline comments: list IDs and reply
-    - List review comments (IDs + text) for latest review by a reviewer:
-      - `gh pr-review comments ids -R owner/repo --pr N --latest --reviewer reviewer_login`
-    - Or for a specific review:
-      - `gh pr-review comments ids owner/repo#N --review_id 3531807471`
-    - Reply to a specific comment (use returned ID):
-      - `gh pr-review comments reply -R owner/repo --pr N --comment-id 2582545223 --body "[minor] Acknowledged; will add retry logic."`
-
-    Behavior:
-    - Output includes `id`, `body`, `user` (login/id), timestamps, `html_url`, and `path/line` when available.
-    - Pagination: `--per_page`, `--page`, `--limit`.
-
-    ## Threads: find from comment and resolve/unresolve
-    - Find a thread from a comment ID (returns minimal schema):
-      - `gh pr-review threads find -R owner/repo --pr N --comment_id 2582545223`
-      - Output: `{ "id": "PRRT_...", "isResolved": false }`
-    - Resolve a thread (use returned thread id):
-      - `gh pr-review threads resolve -R owner/repo --pr N --thread-id PRRT_...`
-    - Unresolve a thread:
-      - `gh pr-review threads unresolve -R owner/repo --pr N --thread-id PRRT_...`
-
-    Notes:
-    - `--mine` filter includes threads you can resolve/unresolve.
-
-    # Optimization Tips
-    - The `gh pr review --add-comment` can be executed in batch instead of one by one to optimize performance. Grouping calls where possible is recommended.
 
     # Output message to an user
     - State clearly that you have finished your work, and wait for the next call if more work is required.
