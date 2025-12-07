@@ -316,87 +316,98 @@ config:
     Repository may include its own **project-specific guides**, usually found in the **`docs/`** directory or files such as `CONTRIBUTING.md`, `STYLEGUIDE.md`, or `CODE_GUIDELINES.md`.  Research this documents before reviewing the code.
 
 
-    # GitHub gh – Pull Request Review Guide
-    > Commands used: `gh pr review --start`, `gh pr review --add-comment`, `gh pr review --submit`, `gh pr-review comments ids`, `gh pr-review comments reply`, `gh pr-review threads find`, `gh pr-review threads resolve`, `gh pr-review threads unresolve`
+    # Documentation `gh pr-review`
+    You have a pre-installed `gh pr-review` extension that simplifies working with Pull Requests. Below are the commands for retrieving PR reviews/comments and replying to review comments in a thread, submit review and resolve review comments.
 
     ## Quick PR overview with gh
-    Use these built-in `gh pr` commands when you need fast context before diving
-    into review-specific actions. 
+    View details: `gh pr-review review report <owner>/<repo>#<number>`
 
-    - View details: `gh pr view -R owner/repo N (title, description, metadata)`
-    - View with top-level comments: `gh pr view -R owner/repo N --comments`
-    - Structured JSON (built-in gh only): `gh pr view -R owner/repo N --json files,reviews,headRefOid --jq '.files[].path'`
-    - Inspect changes: `gh pr diff -R owner/repo N and gh pr diff -R owner/repo N --name-only`
-    - Create pending review: `gh pr-review review -R owner/repo --pr N --start` → returns { id, state, database_id?, html_url? }
-    - Add inline thread: `gh pr-review review -R owner/repo --pr N --review-id PRR_... --add-comment --path <file> --line <n> --side RIGHT --body "<text>" `→ returns { id, path, is_outdated, line? }
-    - Latest pending review id: `gh pr-review review pending-id -R owner/repo --pr N --reviewer <login>`
-    - Submit pending review: `gh pr-review review -R owner/repo --pr N --review-id PRR_... --event <APPROVE|REQUEST_CHANGES|COMMENT> [--body "<text>"] --submit`
-    - Threads (unresolved): `gh pr-review threads list -R owner/repo --pr N --unresolved` → [] when none
-    - Resolve thread: `gh pr-review threads resolve -R owner/repo --pr N --comment-id <ID>` → { threadId, isResolved: true, changed: true }
-    - List comment IDs: `gh pr-review comments ids -R owner/repo --pr N --latest --reviewer <login>`
-    - Reply by ID: `gh pr-review comments reply -R owner/repo --pr N --comment-id <ID> --body "<text>" [--concise]`
+    Default scope:
+    - Includes every reviewer and review state (APPROVED, CHANGES_REQUESTED,
+      COMMENTED, DISMISSED).
+    - Threads are grouped by parent inline comment; replies are sorted by
+      `created_at` ascending.
+    - Optional fields are omitted rather than rendered as `null`.
 
-    Notes:
-    - Built-in `gh pr` commands require `--json` to emit structured data; the
-      `gh pr-review` extension returns JSON without additional flags.
-    - All commands in this guide prefer the `-R owner/repo --pr N` selector format
-      for clarity, but PR URLs and `owner/repo#N` also work.
+    Useful filters:
+    - **`--reviewer <login>`** — Limit to a specific reviewer login (case-insensitive).
+    - **`--states <list>`** — Comma-separated list of review states.
+    - **`--unresolved`** — Only include unresolved threads.
+    - **`--not_outdated`** — Drop threads marked as outdated.
+    - **`--tail <n>`** — Keep the last `n` replies per thread (0 keeps all).
 
+    Example capturing the latest actionable work:
 
-    Workflow bellow repesents how to create a pending review, adds one or more review comments (inline or file-level), and then submits the review with a final decision. 
-
-    1) Start a pending review
-    ```
-    # Returns PRR id and enriched fields
-    gh pr-review review -R owner/repo --pr 123 --start
-    # Example output:
-    {"id":"PRR_...","state":"PENDING","database_id":3541...,"html_url":"https://github.com/...#pullrequestreview-..."}
-    ```
-    Capture the `id` (PRR_...) for subsequent commands.
-
-    2) Add inline comments
-    ```
-    # Add a thread to a file at a specific line and side
-    gh pr-review review -R owner/repo --pr 123 \
-      --review-id PRR_... --add-comment \
-      --path scenario.md --line 21 --side RIGHT \
-      --body "Reviewer note"
-    # Example output:
-    {"id":"PRRT_...","path":"scenario.md","is_outdated":false,"line":21}
-    ```
-    Repeat per comment.
-
-
-    3) Submit review (Status-only, GraphQL-only)
-
-    Use one of the event types (`--event`):
-    - `APPROVE` — no body required
-    - `REQUEST_CHANGES` — body required (explain requested changes)
-    - `COMMENT` — body required (general feedback)
-
-    Examples:
-    ```
-    # Approve
-    gh pr-review review -R owner/repo --pr 123 \
-      --review-id PRR_... --event APPROVE --submit
-    # Request changes
-    gh pr-review review -R owner/repo --pr 123 \
-      --review-id PRR_... --event REQUEST_CHANGES \
-      --body "Please address the noted issues." --submit
-    # Comment
-    gh pr-review review -R owner/repo --pr 123 \
-      --review-id PRR_... --event COMMENT \
-      --body "General feedback." --submit
+    ```bash
+    gh pr-review review report agyn/repo#51 \
+      --reviewer emerson \
+      --states CHANGES_REQUESTED,COMMENTED \
+      --unresolved \
+      --not_outdated \
+      --tail 2
     ```
 
-    - Success:
+    ## Reply to an inline comment
+    Use the **thread_id** values with `gh pr-review comments reply` to continue discussions.
+    Example:
+
+    ```sh
+    gh pr-review comments reply \
+     --thread-id PRRT_kwDOAAABbcdEFG12 \
+     --body "Follow-up addressed in commit abc123" \
+     owner/repo#42
     ```
-    {"status":"Review submitted successfully"}
-    ```
-    - Failure:
-    ```
-    {"status":"Review submission failed","errors":[{"message":"...","path":[...]}]}
-    ```
+
+    Note: If you want to leave a high-level comment on a PR that isn’t tied to any specific review thread, you can use gh pr comment. This allows you to add general feedback directly to the pull request.
+
+    ## Submit Review
+
+    1. **Start a pending review.**
+
+       ```sh
+       gh pr-review review --start owner/repo#42
+
+       {
+         "id": "PRR_kwDOAAABbcdEFG12",
+         "state": "PENDING"
+       }
+       ```
+
+    2. **Add inline comments with the pending review ID.** The `review --add-comment`requiers `review-id` identifier `PRR_…`.
+
+       ```sh
+       gh pr-review review --add-comment \
+         --review-id PRR_kwDOAAABbcdEFG12 \
+         --path internal/service.go \
+         --line 42 \
+         --body "nit: use helper" \
+         owner/repo#42
+
+       {
+         "id": "PRRT_kwDOAAABbcdEFG12",
+         "path": "internal/service.go",
+         "is_outdated": false,
+         "line": 42
+       }
+       ```
+
+    3. **Submit the review.** Reuse the pending review `PRR_…`
+       identifier when finalizing. Successful submissions emit a status-only
+       payload. Errors are returned as structured JSON for
+       troubleshooting.
+
+       ```sh
+       gh pr-review review --submit \
+         --review-id PRR_kwDOAAABbcdEFG12 \
+         --event REQUEST_CHANGES \
+         --body "Please add tests" \
+         owner/repo#42
+
+       {
+         "status": "Review submitted successfully"
+       }
+       ```
+
 
     Additional Rule:
     - If any `[major]` level problem is present in the review comments, you must submit with `REQUEST_CHANGES`.
