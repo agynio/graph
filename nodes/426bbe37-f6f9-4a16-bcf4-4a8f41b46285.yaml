@@ -1,10 +1,11 @@
 id: 426bbe37-f6f9-4a16-bcf4-4a8f41b46285
 template: mcpServer
 config:
-  title: Search
   namespace: search
   command: npx -y mcp-remote https://mcp.tavily.com/mcp/?tavilyApiKey=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
-  env: []
+  env:
+    - name: ""
+      value: ""
   restart:
     maxAttempts: 5
     backoffMs: 2000
@@ -12,6 +13,7 @@ config:
   startupTimeoutMs: 15000
   heartbeatIntervalMs: 300000
   staleTimeoutMs: 0
+  title: Search
 state:
   mcp:
     tools:
