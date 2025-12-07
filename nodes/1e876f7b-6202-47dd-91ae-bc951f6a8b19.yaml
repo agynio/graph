@@ -1,8 +1,6 @@
 id: 1e876f7b-6202-47dd-91ae-bc951f6a8b19
 template: workspace
 config:
-  kind: Workspace
-  title: Workspace
   image: ghcr.io/agynio/devcontainer:latest
   env:
     - name: GITHUB_TOKEN
@@ -44,7 +42,7 @@ config:
         commitHash: ee09932cedcef15aaf476f9343d1dea2cb77e261
         attributePath: gh
   memory_limit: 8Gi
-  initialScript: nix profile add nixpkgs#gh && gh extension install Agyn-sandbox/gh-pr-review
+  initialScript: nix profile add nixpkgs#gh && gh extension install Agyn/gh-pr-review
 position:
   x: 700.0303334133928
   y: -536.1736341580081
