@@ -8,7 +8,7 @@ config:
       value:
         kind: vault
         path: ""
-        key: ""
+        key: t
       source: vault
   restart:
     maxAttempts: 5
