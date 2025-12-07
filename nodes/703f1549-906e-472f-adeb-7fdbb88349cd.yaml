@@ -121,19 +121,20 @@ config:
 
     ---
 
-    ## Review Guide (getting comments / answer on them)
+    ## Documentation `gh pr-review`
+    You have a pre-installed `gh pr-review` extension that simplifies working with Pull Requests. Below are the commands for retrieving PR reviews/comments and replying to review comments in a thread.
 
     ### Quick PR overview with gh
     View details: `gh pr-review review report <owner>/<repo>#<number>`
-    Default scope:
 
+    Default scope:
     - Includes every reviewer and review state (APPROVED, CHANGES_REQUESTED,
       COMMENTED, DISMISSED).
     - Threads are grouped by parent inline comment; replies are sorted by
       `created_at` ascending.
     - Optional fields are omitted rather than rendered as `null`.
 
-    Useful filters
+    Useful filters:
     - **`--reviewer <login>`** — Limit to a specific reviewer login (case-insensitive).
     - **`--states <list>`** — Comma-separated list of review states.
     - **`--unresolved`** — Only include unresolved threads.
