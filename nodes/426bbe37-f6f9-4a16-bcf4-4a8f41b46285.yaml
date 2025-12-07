@@ -17,6 +17,7 @@ config:
   startupTimeoutMs: 15000
   heartbeatIntervalMs: 300000
   staleTimeoutMs: 0
+  workdir: ""
   title: Search
 state:
   mcp:
