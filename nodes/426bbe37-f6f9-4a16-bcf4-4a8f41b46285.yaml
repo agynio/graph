@@ -5,7 +5,11 @@ config:
   command: npx -y mcp-remote https://mcp.tavily.com/mcp/?tavilyApiKey=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
   env:
     - name: TAVILY
-      value: ""
+      value:
+        kind: vault
+        path: ""
+        key: ""
+      source: vault
   restart:
     maxAttempts: 5
     backoffMs: 2000
