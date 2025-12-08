@@ -316,8 +316,7 @@ config:
     Repository may include its own **project-specific guides**, usually found in the **`docs/`** directory or files such as `CONTRIBUTING.md`, `STYLEGUIDE.md`, or `CODE_GUIDELINES.md`.  Research this documents before reviewing the code.
 
 
-    # Documentation `gh pr-review`
-    You have a pre-installed `gh pr-review` extension that simplifies working wit## Documentation `gh pr-review`
+    ## Documentation `gh pr-review`
     You have a pre-installed `gh pr-review` extension that simplifies working with Pull Requests. Below are the commands for retrieving PR reviews/comments and replying to review comments in a thread.
 
     ## Quick PR overview with gh
