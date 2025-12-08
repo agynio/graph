@@ -1,10 +1,16 @@
 id: 426bbe37-f6f9-4a16-bcf4-4a8f41b46285
 template: mcpServer
 config:
-  title: Search
   namespace: search
-  command: npx -y mcp-remote https://mcp.tavily.com/mcp/?tavilyApiKey=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
-  env: []
+  command: npx -y mcp-remote https://mcp.tavily.com/mcp/?tavilyApiKey=$TAVILY_TOKEN
+  env:
+    - name: TAVILY_TOKEN
+      value:
+        kind: vault
+        path: tavily
+        key: TOKEN
+        mount: secrets
+      source: vault
   restart:
     maxAttempts: 5
     backoffMs: 2000
@@ -12,6 +18,8 @@ config:
   startupTimeoutMs: 15000
   heartbeatIntervalMs: 300000
   staleTimeoutMs: 0
+  workdir: ""
+  title: Search
 state:
   mcp:
     tools:
@@ -283,7 +291,7 @@ state:
         outputSchema:
           type: object
           additionalProperties: true
-    toolsUpdatedAt: 1761230759543
+    toolsUpdatedAt: 1765146906397
     enabledTools:
       - tavily_search
       - tavily_extract
