@@ -339,7 +339,7 @@ config:
     Example capturing the latest actionable work:
 
     ```bash
-    gh pr-review review report 51 -R agyn/repo \
+    gh pr-review review veiw 51 -R agyn/repo \
       --reviewer emerson \
       --states CHANGES_REQUESTED,COMMENTED \
       --unresolved \
@@ -413,7 +413,7 @@ config:
 
     ## Resolving review comments
 
-    To see a list of your unresolved threads, use `gh pr-review review report` with filters `--unresolved` and `--reviewer <your login>`
+    To see a list of your unresolved threads, use `gh pr-review review view` with filters `--unresolved` and `--reviewer <your login>`
 
 
     Mark an inline thread as resolved:
