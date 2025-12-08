@@ -302,7 +302,7 @@ config:
     Example capturing the latest actionable work:
 
     ```bash
-    gh pr-review review report 51 -R agyn/repo \
+    gh pr-review review view 51 -R agyn/repo \
       --reviewer emerson \
       --states CHANGES_REQUESTED,COMMENTED \
       --unresolved \
