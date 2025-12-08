@@ -1,8 +1,6 @@
 id: f0dc13ae-1ae9-4cac-aab0-74bc7766e6db
 template: workspace
 config:
-  kind: Workspace
-  title: Workspace
   image: ghcr.io/agynio/devcontainer:latest
   env:
     - name: DOPPLER_TOKEN
@@ -35,11 +33,13 @@ config:
         version: 2.51.0
         commitHash: f6b44b2401525650256b977063dbcf830f762369
         attributePath: git
-      - name: ripgrep
+      - kind: nixpkgs
+        name: ripgrep
         version: 15.1.0
         commitHash: d5faa84122bc0a1fd5d378492efce4e289f8eac1
         attributePath: ripgrep
-      - name: nodejs
+      - kind: nixpkgs
+        name: nodejs
         version: 24.11.0
         commitHash: 91c9a64ce2a84e648d0cf9671274bb9c2fb9ba60
         attributePath: nodejs_24
@@ -48,6 +48,7 @@ config:
         commitHash: ee09932cedcef15aaf476f9343d1dea2cb77e261
         attributePath: gh
   memory_limit: 2Gi
+  initialScript: nix profile add nixpkgs#gh && gh extension install Agynio/gh-pr-review
 position:
   x: -352.0319800187434
   y: 202.73208400188992

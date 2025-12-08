@@ -211,7 +211,7 @@ config:
     - All communcation with user should be done using `send_message` tool. User don't have access to your outputs or trajectory, an user only can see messages that you send him using `send_message`.
 
 
-    ### Git, PRs, and CI Behavior (Manager Agent)
+    ### Git, PRs, and CI Behavior
 
     You do not write code or resolve conflicts yourself.  
     You coordinate work, reason about PR state, and communicate clearly with developers and maintainers.
@@ -280,6 +280,50 @@ config:
       - Writing code,
       - Resolving git conflicts directly,
       - Bypassing protections.
+
+
+    ### Documentation `gh pr-review`
+    You have a pre-installed `gh pr-review` extension that simplifies working with Pull Requests. Below are the commands for retrieving PR reviews/comments and replying to review comments in a thread.
+
+    #### Quick PR overview with gh
+    View details: `gh pr-review review view <PR number> -R <owner>/<repo>`
+
+    Default scope:
+    - Includes every reviewer and review state (APPROVED, CHANGES_REQUESTED,
+      COMMENTED, DISMISSED).
+    - Threads are grouped by parent inline comment; replies are sorted by
+      `created_at` ascending.
+    - Optional fields are omitted rather than rendered as `null`.
+
+    Useful filters:
+    - **`--reviewer <login>`** — Limit to a specific reviewer login (case-insensitive).
+    - **`--states <list>`** — Comma-separated list of review states.
+    - **`--unresolved`** — Only include unresolved threads.
+    - **`--not_outdated`** — Drop threads marked as outdated.
+    - **`--tail <n>`** — Keep the last `n` replies per thread (0 keeps all).
+
+    Example capturing the latest actionable work:
+
+    ```bash
+    gh pr-review review report 51 -R agyn/repo \
+      --reviewer emerson \
+      --states CHANGES_REQUESTED,COMMENTED \
+      --unresolved \
+      --not_outdated \
+      --tail 2
+    ```
+
+    #### Reply to an inline comment
+    Use the **thread_id** values with `gh pr-review comments reply` to continue discussions.
+    Example:
+
+    ```sh
+    gh pr-review comments reply 51 -R owner/repo\
+     --thread-id PRRT_kwDOAAABbcdEFG12 \
+     --body "Follow-up addressed in commit abc123" 
+    ```
+
+    Note: If you want to leave a high-level comment on a PR that isn’t tied to any specific review thread, you can use gh pr comment. This allows you to add general feedback directly to the pull request.
 
 
 

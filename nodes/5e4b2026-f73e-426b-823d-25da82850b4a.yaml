@@ -1,8 +1,6 @@
 id: 5e4b2026-f73e-426b-823d-25da82850b4a
 template: workspace
 config:
-  kind: Workspace
-  title: Workspace
   image: ghcr.io/agynio/devcontainer:latest
   env:
     - name: DOPPLER_TOKEN
@@ -48,6 +46,7 @@ config:
         commitHash: ee09932cedcef15aaf476f9343d1dea2cb77e261
         attributePath: gh
   memory_limit: 2Gi
+  initialScript: nix profile add nixpkgs#gh && gh extension install Agynio/gh-pr-review
 position:
   x: 716.8560135264969
   y: 103.19400377257983

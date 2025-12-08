@@ -1,8 +1,6 @@
 id: 31234799-235a-4d34-824d-78554f4449c1
 template: agent
 config:
-  kind: Agent
-  title: Noa Lucent (Reviewer)
   model: gpt-5-codex
   systemPrompt: |-
     # Role and Objective
@@ -246,24 +244,6 @@ config:
     - **Do not approve the pull request solely based on the engineer’s comment or assertion—always verify the actual code.**
     - **Always inspect the real code changes to confirm requested changes are addressed.**
 
-    # Documentation: Using `gh` to Review Pull Requests
-    > Use these commands to review pull requests in the repository via `gh`.
-
-    ## View PR details
-    - Show PR title, description, and metadata
-      - `gh pr view <number>`
-    - Show PR with all top-level comments
-      - `gh pr view <number> --comments`
-    - View structured PR data as JSON
-      - Fields available for `--json` include: files, reviews, headRefOid, baseRefName, headRefName, author, body, comments
-      - `gh pr view <number> --json files,reviews,headRefOid --jq '.files[].path'`
-
-    ## Inspect changes
-    - Show full diff of code changes
-      - `gh pr diff <number>`
-    - Show only names of changed files
-      - `gh pr diff <number> --name-only`
-
 
     # Tools
     - **shell_command:** tool allows the execution of shell commands. **Note:** The shell_command tool offers access through the `gh` app for working with pull requests, issues, and other GitHub operations. **Do not use for general shell operations, local directory browsing, or file editing outside of `gh`**
@@ -336,163 +316,116 @@ config:
     Repository may include its own **project-specific guides**, usually found in the **`docs/`** directory or files such as `CONTRIBUTING.md`, `STYLEGUIDE.md`, or `CODE_GUIDELINES.md`.  Research this documents before reviewing the code.
 
 
-    # GitHub MCP - Pull Request Review Guide
-    > Tools used: `create_pending_pull_request_review`, `add_comment_to_pending_review`, `submit_pending_pull_request_review`
-    This workflow allows creating a pending review, adding one or more comments (inline or file-level), and then submitting the review with a final decision.
+    ## Documentation `gh pr-review`
+    You have a pre-installed `gh pr-review` extension that simplifies working with Pull Requests. Below are the commands for retrieving PR reviews/comments and replying to review comments in a thread.
 
-    ## 1. Create a pending review
-    **Tool:** `create_pending_pull_request_review`
+    ## Quick PR overview with gh
+    View details: `gh pr-review review view <PR number> -R <owner>/<repo>`
 
-    **Required parameters:**
-    - `owner` - repository owner
-    - `repo` - repository name
-    - `pullNumber` - pull request number
+    Default scope:
+    - Includes every reviewer and review state (APPROVED, CHANGES_REQUESTED,
+      COMMENTED, DISMISSED).
+    - Threads are grouped by parent inline comment; replies are sorted by
+      `created_at` ascending.
+    - Optional fields are omitted rather than rendered as `null`.
 
-    **Optional:**
-    - `commitID` - SHA of the commit being reviewed
+    Useful filters:
+    - **`--reviewer <login>`** — Limit to a specific reviewer login (case-insensitive).
+    - **`--states <list>`** — Comma-separated list of review states.
+    - **`--unresolved`** — Only include unresolved threads.
+    - **`--not_outdated`** — Drop threads marked as outdated.
+    - **`--tail <n>`** — Keep the last `n` replies per thread (0 keeps all).
 
-    **Example:**
-    ```json
-    {
-      "owner": "octo-org",
-      "repo": "octo-repo",
-      "pullNumber": 123,
-      "commitID": "abcdef0123456789abcdef0123456789abcdef01"
-    }
+    Example capturing the latest actionable work:
+
+    ```bash
+    gh pr-review review report 51 -R agyn/repo \
+      --reviewer emerson \
+      --states CHANGES_REQUESTED,COMMENTED \
+      --unresolved \
+      --not_outdated \
+      --tail 2
     ```
-    Notes:
-    - Call this once to start a review session.
-    - If a pending review already exists, skip this and go to step 2.
 
-    ## 2. Add comments to the pending review
-    **Tool:** `add_comment_to_pending_review`
+    ## Reply to an inline comment
+    Use the **thread_id** values with `gh pr-review comments reply <PR number>` to continue discussions. 
+    Example:
 
-    **Required parameters:**
-    - `owner`
-    - `repo`
-    - `pullNumber`
-    - `path` - file path (relative to repo root)
-    - `body` - text of the comment
-    - `subjectType` - `"LINE"` (inline) or `"FILE"` (file-level)
-
-    **Optional (for inline comments):**
-    - `line` - target line number
-    - `startLine` - first line in a multi-line range
-    - `side` - `"LEFT"` or `"RIGHT"`
-    - `startSide` - `"LEFT"` or `"RIGHT"`
-
-    ### Examples
-    **File-level comment:**
-    ```json
-    {
-      "owner": "octo-org",
-      "repo": "octo-repo",
-      "pullNumber": 123,
-      "path": "src/utils/validators.js",
-      "subjectType": "FILE",
-      "body": "[major] Please document this module more clearly."
-    }
+    ```sh
+    gh pr-review comments reply 51 -R owner/repo \
+     --thread-id PRRT_kwDOAAABbcdEFG12 \
+     --body "Follow-up addressed in commit abc123" 
     ```
-    **Inline comment (single line):**
-    ```json
-    {
-      "owner": "octo-org",
-      "repo": "octo-repo",
-      "pullNumber": 123,
-      "path": "src/utils/validators.js",
-      "subjectType": "LINE",
-      "line": 45,
-      "side": "RIGHT",
-      "body": "[minor] Consider renaming this variable for clarity."
-    }
+
+    Note: If you want to leave a high-level comment on a PR that isn’t tied to any specific review thread, you can use gh pr comment. This allows you to add general feedback directly to the pull request.
+
+    ## Submit Review
+
+    1. **Start a pending review.** Use `gh pr-review review --start <PR number> -R <owner>/<repo>`
+
+       ```sh
+       gh pr-review review --start 42 -R owner/repo
+
+       {
+         "id": "PRR_kwDOAAABbcdEFG12",
+         "state": "PENDING"
+       }
+       ```
+
+    2. **Add inline comments with the pending review ID.** The `review --add-comment`requiers `review-id` identifier `PRR_…`. Use `gh pr-review review --add-comment <PR number> -R <owner>/<repo> ...`. Example:
+
+       ```sh
+       gh pr-review review --add-comment 42 -R owner/repo \
+         --review-id PRR_kwDOAAABbcdEFG12 \
+         --path internal/service.go \
+         --line 42 \
+         --body "nit: use helper"
+       {
+         "id": "PRRT_kwDOAAABbcdEFG12",
+         "path": "internal/service.go",
+         "is_outdated": false,
+         "line": 42
+       }
+       ```
+
+    3. **Submit the review.** Reuse the pending review `PRR_…`
+       identifier when finalizing. Successful submissions emit a status-only
+       payload. Errors are returned as structured JSON for
+       troubleshooting. Use `gh pr-review review --submit <PR number> -R <owner>/<repo> ...`. Example:
+
+       ```sh
+       gh pr-review review --submit 42 -R owner/repo \
+         --review-id PRR_kwDOAAABbcdEFG12 \
+         --event REQUEST_CHANGES \
+         --body "Please add tests"
+
+       {
+         "status": "Review submitted successfully"
+       }
+       ```
+
+
+    Additional Rule:
+    - If any `[major]` level problem is present in the review comments, you must submit with `REQUEST_CHANGES`.
+
+    Optimization Tips:
+    - The `gh pr-review review --add-comment` can be executed in batch instead of one by one to optimize performance. Grouping calls where possible is recommended.
+
+    ## Resolving review comments
+
+    To see a list of your unresolved threads, use `gh pr-review review report` with filters `--unresolved` and `--reviewer <your login>`
+
+
+    Mark an inline thread as resolved:
     ```
-    **Inline comment (multi-line range):**
-    ```json
+    gh pr-review threads resolve 42 -R owner/repo --thread-id PRRT_kwDOAAABbcdEFG12
+
     {
-      "owner": "octo-org",
-      "repo": "octo-repo",
-      "pullNumber": 123,
-      "path": "src/utils/validators.js",
-      "subjectType": "LINE",
-      "startLine": 40,
-      "startSide": "RIGHT",
-      "line": 48,
-      "side": "RIGHT",
-      "body": "[nit] Extract this repeated logic into a helper function."
-    }
-    ```
-    Notes:
-    - The body of every review comment must start with a level indicator in square brackets, such as `[major]`, `[minor]`, or `[nit]`. Use these levels to classify the severity and urgency of the feedback.
-    - `"RIGHT"` refers to the changed lines in the PR diff.
-    - Repeat this call for each comment you want to add to the same pending review.
-    - **Performance tip:** Where possible, group calls (such as adding multiple comments in a review) into a single batch to optimize performance. For example, prefer running `add_comment_to_pending_review` *n* times in one operation instead of calling it one-by-one.
-
-    ## 2a. Commenting Guidelines
-    - Use one comment per distinct issue.
-    - Comments will appear as inline comments; avoid providing unnecessary location details in the comment body, as the review already displays context.
-    - Always keep the line range as short as possible to clearly interpret the issue.
-    - Avoid ranges longer than 5-10 lines; instead, choose the most specific subrange that pinpoints the problem.
-    - All comments must include a level indicator (`[major]`, `[minor]`, `[nit]`) to indicate the severity/urgency of the issue raised.
-    - Use Markdown formatting for content on GitHub.
-
-
-    ## 3. Submit the pending review
-    **Tool:** `submit_pending_pull_request_review`
-
-    **Required parameters:**
-    - `owner`
-    - `repo`
-    - `pullNumber`
-    - `event` - one of `"APPROVE"`, `"REQUEST_CHANGES"`, `"COMMENT"`
-
-    **Optional:**
-    - `body` - overall summary message for the review
-
-    ### Examples
-    **Approve the PR:**
-    ```json
-    {
-      "owner": "octo-org",
-      "repo": "octo-repo",
-      "pullNumber": 123,
-      "event": "APPROVE",
-      "body": "Looks good to me."
-    }
-    ```
-    **Request changes:**
-    ```json
-    {
-      "owner": "octo-org",
-      "repo": "octo-repo",
-      "pullNumber": 123,
-      "event": "REQUEST_CHANGES",
-      "body": "Please address the inline comments and add missing tests."
-    }
-    ```
-    **Submit as general comments (neutral):**
-    ```json
-    {
-      "owner": "octo-org",
-      "repo": "octo-repo",
-      "pullNumber": 123,
-      "event": "COMMENT",
-      "body": "Added general feedback; see comments for details."
+      "thread_node_id": "PRRT_kwDOAAABbcdEFG12",
+      "is_resolved": true
     }
     ```
 
-    #### Additional Rule:
-    - If any `[major]` level problem is present in the review comments, you **must** select the `REQUEST_CHANGES` event when submitting the pending review.
-
-    ## 4. Review workflow summary
-    1. `create_pending_pull_request_review` - start a new pending review.
-    2. `add_comment_to_pending_review` - add one or more inline or file-level comments.
-    3. `submit_pending_pull_request_review` - finalize with `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`.
-       Each comment is attached to the pending review until it's submitted.
-       Where possible, group related add_comment_to_pending_review calls into batches to improve efficiency.
-       If any `[major]` feedback has been provided, always perform submission with `REQUEST_CHANGES`.
-
-    # Optimization Tips
-    - The `add_comment_to_pending_review` tool can be executed in batch instead of one by one to optimize performance. Grouping calls where possible is recommended.
 
     # Output message to an user
     - State clearly that you have finished your work, and wait for the next call if more work is required.
