@@ -1,8 +1,6 @@
 id: 17ad463d-681b-4830-bf8a-d5cd5d61d774
 template: agent
 config:
-  kind: Agent
-  title: Emerson Gray (Researcher)
   model: gpt-5
   systemPrompt: |-
     # Role and Objective
@@ -85,6 +83,10 @@ config:
     ---
 
     ## GitHub Issue / PR Workflow
+
+    Working with GitHub:
+    - Use GitHub cli (`gh`) to work with git.
+    - Use `gh repo clone <org>/<repo> /workspace/<repo>` to clone a repo in the workspace
 
     Whenever the task references a GitHub Issue, PR, ticket, or bug, follow this internal workflow:
 
@@ -351,6 +353,7 @@ config:
   restrictionMaxInjections: 0
   name: Emerson Gray
   role: Researcher
+  title: Emerson Gray (Researcher)
 position:
   x: 715.9432323789721
   y: -90.10262634935614
