@@ -7,5 +7,5 @@ config:
   workdir: /workspace
   outputLimitChars: 50000
 position:
-  x: 1156.2520408721857
-  y: -550.7532276896046
+  x: 1149.6899033288798
+  y: -667.2311690832862
