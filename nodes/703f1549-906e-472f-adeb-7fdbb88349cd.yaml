@@ -76,7 +76,7 @@ config:
 
     ### Git, Branching & Version Control
     - Use GitHub cli (`gh`) to work with git
-    - Use `gh repo clone <repository> /workspace` to clone a repo in the workspace
+    - Use `gh repo clone <org>/<repo> /workspace/<repo>` to clone a repo in the workspace
     - **Branch and PR lifecycle awareness**
       - Before working on a branch, check whether its associated Pull Request is already **merged or closed**.
       - **Do not push new commits to branches whose PRs are already merged or closed.**
