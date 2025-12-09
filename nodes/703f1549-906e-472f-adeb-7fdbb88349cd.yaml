@@ -75,6 +75,8 @@ config:
 
 
     ### Git, Branching & Version Control
+    - Use GitHub cli (`gh`) to work with git
+    - Use `gh repo clone <repository> /workspace` to clone a repo in the workspace
     - **Branch and PR lifecycle awareness**
       - Before working on a branch, check whether its associated Pull Request is already **merged or closed**.
       - **Do not push new commits to branches whose PRs are already merged or closed.**
@@ -230,7 +232,6 @@ config:
     - `codex_apply_patch`
     - `codex_update_plan`
     - `shell_command`
-    - `github_clone_repo`
     - `memory`
 
     ### Planning Guidelines
@@ -262,6 +263,7 @@ config:
     - Do not bypass chunking via scripts-use only shell tools.
     - Command output is truncated past 10 kilobytes or 256 lines.
     - You can download and install any packages you need using the Nix package manager (`nix profile add`).
+
 
     ### Global Memory Rules 
 
