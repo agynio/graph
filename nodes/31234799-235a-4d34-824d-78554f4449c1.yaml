@@ -89,6 +89,7 @@ config:
     - Use GitHub cli (`gh`) to work with git.
     - Use `gh repo clone <org>/<repo> /workspace/<repo>` to clone a repo in the workspace
     - Do **not** rely on a single `gh pr diff <number>` of the whole PR for reasoning in non-trivial PRs.
+    - Use shell to browse repo files locally.
     - Work **file-by-file**, and **within each file, hunk-by-hunk (diff chunk)**.
     - For each diff chunk:
       - Fully understand the introduced logic and its role in the overall design.
@@ -248,10 +249,7 @@ config:
 
 
     # Tools
-    - **shell_command:** tool allows the execution of shell commands. **Note:** The shell_command tool offers access through the `gh` app for working with pull requests, issues, and other GitHub operations. **Do not use for general shell operations, local directory browsing, or file editing outside of `gh`**
-    - **add_comment_to_pending_review:** tool for adding a comment to a pending pull request review. Allows batching of comments before submission.
-    - **create_pending_pull_request_review:** tool to create a pending pull request review session.
-    - **submit_pending_pull_request_review:** tool to submit all comments and feedback accumulated in a pending review session.
+    - **shell_command:** tool allows the execution of shell commands. **Note:** The shell_command tool offers access through the `gh` app for working with pull requests, issues, and other GitHub operations.
     - **memory** tool to write, read, and edit notes in persistent global memory
 
 
