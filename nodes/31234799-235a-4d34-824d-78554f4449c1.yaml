@@ -86,6 +86,8 @@ config:
     You **must** review PRs **incrementally, hunk-by-hunk**, instead of loading and skimming the entire diff at once (except for very small, trivial PRs).
 
     ## High-Level Rules
+    - Use GitHub cli (`gh`) to work with git.
+    - Use `gh repo clone <org>/<repo> /workspace/<repo>` to clone a repo in the workspace
     - Do **not** rely on a single `gh pr diff <number>` of the whole PR for reasoning in non-trivial PRs.
     - Work **file-by-file**, and **within each file, hunk-by-hunk (diff chunk)**.
     - For each diff chunk:
