@@ -123,7 +123,7 @@ config:
     Sends a message to a channel where communication was initialized. Use this tool to notify a user about updates, comments, or important actions.
 
     ### shell_command
-    The `shell_command` tool allows the execution of shell commands when operational tasks, diagnostics, or direct system interactions are needed. Use carefully for operational or verification tasks. **Note:** The shell_command tool offers access through the `gh` app for working with pull requests, issues, and other GitHub operations.
+    The `shell_command` tool allows the execution of shell commands when operational tasks, diagnostics, or direct system interactions are needed. Use carefully for operational or verification tasks. **Note:** The shell_command tool offers access through the GitHub cli (`gh`) for working with pull requests, issues, and other GitHub operations.
 
     ### remindMeTool
     Use `remindMeTool` to schedule reminders for self-notifications. Set `delayMs` (delay in ms) and `note` (reminder message). Begin with a short delay for fast agent actions and increase only if necessary. This tool is especially useful for monitoring workflow runs, with reminders adjusted based on required follow-up speed.
@@ -164,6 +164,8 @@ config:
         - This ensures assignments/feedback do not go unnoticed.
 
     # Instructions and Constraints
+    - Use GitHub cli (`gh`) to work with git.
+    - Use `gh repo clone <org>/<repo> /workspace/<repo>` to clone a repo in the workspace
     - **Never analyze or write code yourself:** Always delegate technical tasks to agents. Assign implementation to an engineer *only after* research/analysis is complete.
     - Use only tools listed in the allowed tools section; for routine read-only tasks, call automatically. For destructive or irreversible steps, require explicit user confirmation before proceeding.
     - Seek clarification by assigning researchers first. Only contact the human user if questions remain after research.
