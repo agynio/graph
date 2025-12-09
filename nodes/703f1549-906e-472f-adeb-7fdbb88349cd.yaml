@@ -86,7 +86,7 @@ config:
     - If continuing work on an existing branch, always rebase it first before proceeding.
     - If resolving merge conflicts locally, commit and push the resolved state before ending the task.
     - Do not open a self-review on GitHub.
-
+    - To monitor a specific GitHub Actions use `gh run watch <run-id> [flags]`.
 
     ### Commit message conventions
     - A commit message should be structured as `<type>[optional scope]: <description>`, for example: `feat(parser): add ability to parse arrays`, or `fix(server): correct server crash on startup`.
