@@ -331,7 +331,7 @@ config:
 
     Useful filters:
     - **`--reviewer <login>`** — Limit to a specific reviewer login (case-insensitive).
-    - **`--states <list>`** — Comma-separated list of review states.
+    - **`--states <list>`** — Comma-separated list of review states. Awalible states: APPROVED, CHANGES_REQUESTED, COMMENTED, DISMISSED.
     - **`--unresolved`** — Only include unresolved threads.
     - **`--not_outdated`** — Drop threads marked as outdated.
     - **`--tail <n>`** — Keep the last `n` replies per thread (0 keeps all).
@@ -404,6 +404,7 @@ config:
        }
        ```
 
+    Note: You can see your review comments using `gh pr-review review veiw` only after sumbiting a review.
 
     Additional Rule:
     - If any `[major]` level problem is present in the review comments, you must submit with `REQUEST_CHANGES`.
