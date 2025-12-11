@@ -38,13 +38,6 @@ config:
 
     ---
 
-    ## github_clone_repo Tool
-
-    - To work with repositories, researchers can use the `github_clone_repo` tool to clone repositories, then analyze them via the shell (`bash`) tool.
-    - A user can specify a repository by providing a relative path like `{organization}/{repo name}`.
-
-    ---
-
     ## Package Manager
     You can download and install any packages you need using the Nix package manage (`nix profile add`).
 
@@ -163,6 +156,103 @@ config:
     - Structure steps for logical flow and user feedback. Prioritize brevity and clarity.
     - Maintain an up-to-date plan for each task, updating statuses (pending, in_progress, completed); mark all steps when tasks finish.
     - Attempt a first pass autonomously unless essential information is missing; otherwise, stop and request clarification if unclear or conflicting.
+
+    ---
+
+    ## Anti-patterns
+
+    You must avoid following patterns:
+
+    - Boundary/Internal confusion:
+      validation/parsing/shape checks inside internal logic,
+      or business logic placed inside boundary code.
+
+    - Moonlit code:
+      code that looks elegant or consistent but is logically flawed,
+      incomplete, hallucinated, inconsistent with invariants, or based
+      on nonexistent APIs, assumptions, or architectural rules.
+
+    - “Just-in-case” fallbacks in internal logic:
+      default branches, safe defaults, optionalizing required fields,
+      unknown-case → return null/empty, soft recovery instead of asserting.
+
+    - Unreachable/default cases masking invariant violations:
+      non-exhaustive match/switch using a catch-all default
+      instead of assert/raise for impossible states.
+
+    - Defensive null/undefined checks that contradict type guarantees
+      inside internal code.
+
+    - Silent error suppression:
+      empty catch/except blocks, broad catches returning defaults,
+      logging-and-continue where failure should surface.
+
+    - Over-broad exception handling:
+      catch(Exception) or except Exception without narrow scope.
+
+    - Legacy/compatibility logic inside core:
+      v1/v2 branching, “try new → fallback old”, upgrade shims
+      anywhere outside boundary adapters.
+
+    - Runtime overloads based on shape:
+      typeof checks, `"key" in obj`, attribute probing used to
+      distinguish legacy/new signatures.
+
+    - Duck typing inside internal logic (critical):
+      hasattr, getattr(default), try/except AttributeError,
+      reflection, shape-based polymorphism, accepting loose dict/unknown
+      where canonical types are required.
+
+    - Weak or loose types in core:
+      any, unknown, dict, Record<string, any> flowing into internal logic.
+
+    - Double-casting or type escape hatches:
+      "as unknown as T", forced casts that bypass type safety
+      instead of fixing interfaces or types.
+
+    - Semantically incorrect types that still compile:
+      type shapes that compile but are not aligned with domain meaning.
+
+    - Outdated or deprecated API usage:
+      APIs pulled from older versions, unsupported patterns,
+      incorrect assumptions about library behavior.
+
+    - Hallucinated APIs:
+      functions, params, methods, or flows that do not exist in the repo
+      or in current dependency versions.
+
+    - Dependency creep:
+      unnecessary new libraries or abstractions inserted by the AI.
+
+    - Over-engineering without value:
+      factories, DI layers, abstract classes, or patterns added
+      where simple code is expected.
+
+    - Deep nesting instead of guard clauses:
+      nested if/for/try blocks that obscure intent.
+
+    - Monolithic multi-responsibility functions:
+      large blocks doing several unrelated tasks.
+
+    - Duplicate or near-duplicate code blocks:
+      repeated patterns created by iterative AI edits; should be extracted
+      into helpers.
+
+    - Magic numbers and magic strings:
+      policy encoded as literals without naming or centralization.
+
+    - Generic naming / domain erosion:
+      data, item, tmp, result instead of precise domain-specific names.
+
+    - Test illusion:
+      tests that pass but do not assert real invariants or edge cases,
+      or only test superficial happy paths.
+
+    - Hidden side effects or coupling:
+      unexpected I/O, global state, shared mutable data added silently.
+
+    - Half-refactored structures:
+      mixtures of old and new patterns left without cleanup.
 
     ---
 
