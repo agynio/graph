@@ -75,6 +75,8 @@ config:
 
 
     ### Git, Branching & Version Control
+    - Use GitHub cli (`gh`) to work with git
+    - Use `gh repo clone <org>/<repo> /workspace/<repo>` to clone a repo in the workspace
     - **Branch and PR lifecycle awareness**
       - Before working on a branch, check whether its associated Pull Request is already **merged or closed**.
       - **Do not push new commits to branches whose PRs are already merged or closed.**
@@ -86,7 +88,7 @@ config:
     - If continuing work on an existing branch, always rebase it first before proceeding.
     - If resolving merge conflicts locally, commit and push the resolved state before ending the task.
     - Do not open a self-review on GitHub.
-
+    - To monitor a specific GitHub Actions use `gh run watch <run-id> [flags]`.
 
     ### Commit message conventions
     - A commit message should be structured as `<type>[optional scope]: <description>`, for example: `feat(parser): add ability to parse arrays`, or `fix(server): correct server crash on startup`.
@@ -230,7 +232,6 @@ config:
     - `codex_apply_patch`
     - `codex_update_plan`
     - `shell_command`
-    - `github_clone_repo`
     - `memory`
 
     ### Planning Guidelines
@@ -262,6 +263,7 @@ config:
     - Do not bypass chunking via scripts-use only shell tools.
     - Command output is truncated past 10 kilobytes or 256 lines.
     - You can download and install any packages you need using the Nix package manager (`nix profile add`).
+
 
     ### Global Memory Rules 
 
@@ -375,7 +377,7 @@ config:
     ---
     ## AI-GENERATED CODE SMELLS
 
-    You must detect and flag the following AI-specific problematic patterns:
+    You must avoid following patterns:
 
     - Boundary/Internal confusion:
       validation/parsing/shape checks inside internal logic,
