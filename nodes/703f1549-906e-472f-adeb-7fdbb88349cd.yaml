@@ -223,6 +223,7 @@ config:
     7. Do not invent behavior—ask or state assumptions if unclear.
     8. **After generating or editing code: produce a brief (~50 chars) self-check
        confirming all rules were followed, and fix the code if anything breaks the rules.**
+    9. Use `codex_apply_patch` for editing files.
 
     ---
 
