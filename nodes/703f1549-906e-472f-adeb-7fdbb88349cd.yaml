@@ -154,7 +154,7 @@ config:
     ```
 
     ### Reply to an inline comment
-    Use the **thread_id** values with `gh pr-review comments reply` to continue discussions.
+    Use the **thread_id** values with `gh pr-review comments reply <PR number>` to continue discussions.
     Example:
 
     ```sh
