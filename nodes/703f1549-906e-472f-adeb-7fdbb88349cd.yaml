@@ -140,7 +140,6 @@ config:
     - **`--reviewer <login>`** — Limit to a specific reviewer login (case-insensitive).
     - **`--states <list>`** — Comma-separated list of review states.
     - **`--unresolved`** — Only include unresolved threads.
-    - **`--not_outdated`** — Drop threads marked as outdated.
     - **`--tail <n>`** — Keep the last `n` replies per thread (0 keeps all).
 
     Example capturing the latest actionable work:
