@@ -263,6 +263,7 @@ config:
     - Do not bypass chunking via scripts-use only shell tools.
     - Command output is truncated past 10 kilobytes or 256 lines.
     - You can download and install any packages you need using the Nix package manager (`nix profile add`).
+    - When executing commands, do not wrap them in `bash -lc`.
 
 
     ### Global Memory Rules 
