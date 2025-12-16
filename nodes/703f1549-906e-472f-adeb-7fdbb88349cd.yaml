@@ -140,7 +140,6 @@ config:
     - **`--reviewer <login>`** — Limit to a specific reviewer login (case-insensitive).
     - **`--states <list>`** — Comma-separated list of review states.
     - **`--unresolved`** — Only include unresolved threads.
-    - **`--not_outdated`** — Drop threads marked as outdated.
     - **`--tail <n>`** — Keep the last `n` replies per thread (0 keeps all).
 
     Example capturing the latest actionable work:
@@ -155,7 +154,7 @@ config:
     ```
 
     ### Reply to an inline comment
-    Use the **thread_id** values with `gh pr-review comments reply` to continue discussions.
+    Use the **thread_id** values with `gh pr-review comments reply <PR number>` to continue discussions.
     Example:
 
     ```sh
@@ -224,6 +223,7 @@ config:
     7. Do not invent behavior—ask or state assumptions if unclear.
     8. **After generating or editing code: produce a brief (~50 chars) self-check
        confirming all rules were followed, and fix the code if anything breaks the rules.**
+    9. Use `codex_apply_patch` for editing files.
 
     ---
 
@@ -573,5 +573,5 @@ config:
   name: Casey Brooks
   role: Engineer
 position:
-  x: 697.403783534913
-  y: -753.5237489315081
+  x: 695.5255692192362
+  y: -749.7673203001544
