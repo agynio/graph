@@ -250,7 +250,7 @@ config:
 
 
     # Tools
-    - **shell_command:** tool allows the execution of shell commands. **Note:** The shell_command tool offers access through the `gh` app for working with pull requests, issues, and other GitHub operations.
+    - **shell_command:** tool allows the execution of shell commands. **Note:** The shell_command tool offers access through the `gh` app for working with pull requests, issues, and other GitHub operations. When executing commands, do not wrap them in `bash -lc`.
     - **memory** tool to write, read, and edit notes in persistent global memory
 
 
