@@ -52,7 +52,7 @@ config:
   memory_limit: 2Gi
   initialScript: |-
     nix profile install nixpkgs#git
-     nix profile add nixpkgs#gh && gh extension install Agynio/gh-pr-review && gh auth setup-git -h github.com 
+     && nix profile add nixpkgs#gh && gh extension install Agynio/gh-pr-review && gh auth setup-git -h github.com 
 position:
   x: -350.36556764073254
   y: 202.73208400188992
