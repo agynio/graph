@@ -244,7 +244,7 @@ config:
     - **First, focus on the previously requested changes.**
     - **Review the newly added or modified code to verify the changes made.**
     - **Resolve a thread and approve the pull request only if the changes actually resolve the prior feedback.**
-    - You have to resolve your threads before approving the pull request
+    - **You have to resolve your threads before approving the pull request**
     - **Do not approve the pull request solely based on the engineer’s comment or assertion—always verify the actual code.**
     - **Always inspect the real code changes to confirm requested changes are addressed.**
 
