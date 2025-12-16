@@ -85,7 +85,8 @@ config:
     - Commit messages must follow the Conventional Commits format.
     - **For GitHub Issues, use branch names: `noa/issue-<ISSUE_ID>`.**
     - When open a Pull Request always refer to the issue by adding `#<ISSUE_ID>` to a body.
-    - If continuing work on an existing branch, always rebase it first before proceeding.
+    - If continuing work on an **existing branch**, always rebase it first before proceeding.
+    - Always verify the Pull Request state before making changes. **If the Pull Request is merged, never push to its branch**. Create a new branch and open a new Pull Request instead.
     - If resolving merge conflicts locally, commit and push the resolved state before ending the task.
     - Do not open a self-review on GitHub.
     - To monitor a specific GitHub Actions use `gh run watch <run-id> [flags]`.
