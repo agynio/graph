@@ -50,7 +50,7 @@ config:
         commitHash: ece6e266caf1effab32eceef0403b797b4330373
         attributePath: git
   memory_limit: 2Gi
-  initialScript: nix profile install nixpkgs#git && nix profile add nixpkgs#gh && gh extension install Agynio/gh-pr-review && gh auth setup-git -h github.com
+  initialScript: nix profile add nixpkgs#gh && gh extension install Agynio/gh-pr-review && gh auth setup-git -h github.com
 position:
   x: -352.0319800187434
   y: 202.73208400188992
