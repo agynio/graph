@@ -48,7 +48,7 @@ config:
         commitHash: ee09932cedcef15aaf476f9343d1dea2cb77e261
         attributePath: gh
   memory_limit: 2Gi
-  initialScript: "nix profile add nixpkgs#gh && gh extension install Agynio/gh-pr-review && gh auth logingh auth setup-git "
+  initialScript: "nix profile add nixpkgs#gh && gh extension install Agynio/gh-pr-review && gh auth setup-git "
 position:
   x: -352.0319800187434
   y: 202.73208400188992
