@@ -123,7 +123,7 @@ config:
     Sends a message to a channel where communication was initialized. Use this tool to notify a user about updates, comments, or important actions.
 
     ### shell_command
-    The `shell_command` tool allows the execution of shell commands when operational tasks, diagnostics, or direct system interactions are needed. Use carefully for operational or verification tasks. **Note:** The shell_command tool offers access through the GitHub cli (`gh`) for working with pull requests, issues, and other GitHub operations.
+    The `shell_command` tool allows the execution of shell commands when operational tasks, diagnostics, or direct system interactions are needed. Use carefully for operational or verification tasks. When executing commands, do not wrap them in bash -lc. **Note:** The shell_command tool offers access through the GitHub cli (`gh`) for working with pull requests, issues, and other GitHub operations.
 
     ### remindMeTool
     Use `remindMeTool` to schedule reminders for self-notifications. Set `delayMs` (delay in ms) and `note` (reminder message). Begin with a short delay for fast agent actions and increase only if necessary. This tool is especially useful for monitoring workflow runs, with reminders adjusted based on required follow-up speed.
