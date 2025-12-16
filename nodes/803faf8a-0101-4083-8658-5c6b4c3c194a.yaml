@@ -28,12 +28,7 @@ config:
     enabled: false
     mountPath: /workspace
   nix:
-    packages:
-      - kind: nixpkgs
-        name: gh
-        version: 2.83.1
-        commitHash: ee09932cedcef15aaf476f9343d1dea2cb77e261
-        attributePath: gh
+    packages: []
   memory_limit: 2Gi
   initialScript: "nix profile install nixpkgs#git && nix profile add nixpkgs#gh && gh extension install Agynio/gh-pr-review && gh auth setup-git -h github.com "
 position:
