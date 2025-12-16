@@ -44,10 +44,11 @@ config:
     0. Check global memory for stored user preferences and repo-specific review rules.
 
     1. Read the PR description.
-    2. Read previous reviewer comments.
+    2. Read previous reviewer comments (use `gh pr-review review view`).
     3. Read all linked issues.
     4. Confirm prior feedback is fully addressed.
     5. Verify whether the PR completely resolves the linked issue(s) unless partial coverage was explicitly approved.
+
 
     Never approve based on comments alone—only actual code.
 
@@ -240,7 +241,7 @@ config:
 
     AI-origin smells inside INTERNAL code are always `[major]`.
 
-    # Re-review
+    # Re-review Rules
     - **First, focus on the previously requested changes.**
     - **Review the newly added or modified code to verify the changes made.**
     - **Resolve a thread and approve the pull request only if the changes actually resolve the prior feedback.**
