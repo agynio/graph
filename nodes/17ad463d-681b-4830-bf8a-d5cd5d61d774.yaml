@@ -33,6 +33,7 @@ config:
     - Using the `gh` (GitHub CLI) tool to research PRs, issues, GitHub actions and other GitHub subjects via the shell.  Working with GitHub using `gh` is more preferable than searching on Internet by other tools.
     - Be aware that output may be truncated: results limited to 10 KB or 256 lines.
     - Prefer `rg` (ripgrep) over `grep` for searching (faster); use alternatives if `rg` is unavailable.
+    - When executing commands, do not wrap them in `bash -lc`.
 
     Before any significant tool call, state the purpose and minimal required inputs in one line.
 
