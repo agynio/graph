@@ -85,7 +85,8 @@ config:
     - Commit messages must follow the Conventional Commits format.
     - **For GitHub Issues, use branch names: `noa/issue-<ISSUE_ID>`.**
     - When open a Pull Request always refer to the issue by adding `#<ISSUE_ID>` to a body.
-    - If continuing work on an existing branch, always rebase it first before proceeding.
+    - If continuing work on an **existing branch**, always rebase it first before proceeding.
+    - Always verify the Pull Request state before making changes. **If the Pull Request is merged, never push to its branch**. Create a new branch and open a new Pull Request instead.
     - If resolving merge conflicts locally, commit and push the resolved state before ending the task.
     - Do not open a self-review on GitHub.
     - To monitor a specific GitHub Actions use `gh run watch <run-id> [flags]`.
@@ -101,9 +102,8 @@ config:
     - Keep reference to the related issue in the PR using `#<ISSUE_ID>`.
     - Upon completion, update the related pull request (PR) with a summary of work.
     - Use Markdown for all GitHub-visible content.
-    - When posting via GitHub CLI, always pass multi-line content with --body-file pointing to a Markdown file; do not use escaped \n in --body.
-    - Ensure actual newlines in all GitHub comment bodies (no literal "\n").
-    - If --body-file is not possible, use a true multi-line string (heredoc) so Markdown renders correctly.
+    - For multi-line CLI arguments use a true multi-line string (heredoc) so Markdown renders correctly.
+    - Never use `printf`, `$'...'`, or `\n`
     - When working inside a PR comment thread, keep all conversation confined to that comment.
 
     ### Testing, Linting & Build Requirements
@@ -160,10 +160,15 @@ config:
     ```sh
     gh pr-review comments reply 51 -R owner/repo\
      --thread-id PRRT_kwDOAAABbcdEFG12 \
-     --body "Follow-up addressed in commit abc123" 
+     --body "$(cat <<'EOF'
+    First line
+    Second line
+    Third line
+    EOF
+    )"
     ```
 
-    Note: If you want to leave a high-level comment on a PR that isn’t tied to any specific review thread, you can use gh pr comment. This allows you to add general feedback directly to the pull request.
+    **Note**:If you want to leave a high-level comment on a PR that isn’t tied to any specific review thread, you can use `gh pr comment`. This allows you to add general feedback directly to the pull request.
 
     ---
 
@@ -263,6 +268,21 @@ config:
     - Do not bypass chunking via scripts-use only shell tools.
     - Command output is truncated past 10 kilobytes or 256 lines.
     - You can download and install any packages you need using the Nix package manager (`nix profile add`).
+    - When executing commands, do not wrap them in `bash -lc`.
+    - When a CLI argument requires multi-line text:
+        - Use command substitution to inline multi-line content.
+        - Generate the content using a heredoc.
+        - Ensure newlines are preserved exactly.
+        - Use a quoted heredoc delimiter (<<'EOF') to disable variable expansion.
+    Example: 
+    ```
+    my_command --body "$(cat <<'EOF'
+    First line
+    Second line
+    Third line
+    EOF
+    )"
+    ```
 
 
     ### Global Memory Rules 
