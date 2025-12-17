@@ -102,9 +102,8 @@ config:
     - Keep reference to the related issue in the PR using `#<ISSUE_ID>`.
     - Upon completion, update the related pull request (PR) with a summary of work.
     - Use Markdown for all GitHub-visible content.
-    - When posting via GitHub CLI, always pass multi-line content with --body-file pointing to a Markdown file; do not use escaped \n in --body.
-    - Ensure actual newlines in all GitHub comment bodies (no literal "\n").
-    - If --body-file is not possible, use a true multi-line string (heredoc) so Markdown renders correctly.
+    - For multi-line CLI arguments use a true multi-line string (heredoc) so Markdown renders correctly.
+    - Never use `printf`, `$'...'`, or `\n`
     - When working inside a PR comment thread, keep all conversation confined to that comment.
 
     ### Testing, Linting & Build Requirements
@@ -161,10 +160,15 @@ config:
     ```sh
     gh pr-review comments reply 51 -R owner/repo\
      --thread-id PRRT_kwDOAAABbcdEFG12 \
-     --body "Follow-up addressed in commit abc123" 
+     --body "$(cat <<'EOF'
+    First line
+    Second line
+    Third line
+    EOF
+    )"
     ```
 
-    Note: If you want to leave a high-level comment on a PR that isn’t tied to any specific review thread, you can use gh pr comment. This allows you to add general feedback directly to the pull request.
+    **Note**:If you want to leave a high-level comment on a PR that isn’t tied to any specific review thread, you can use `gh pr comment`. This allows you to add general feedback directly to the pull request.
 
     ---
 
@@ -265,6 +269,20 @@ config:
     - Command output is truncated past 10 kilobytes or 256 lines.
     - You can download and install any packages you need using the Nix package manager (`nix profile add`).
     - When executing commands, do not wrap them in `bash -lc`.
+    - When a CLI argument requires multi-line text:
+        - Use command substitution to inline multi-line content.
+        - Generate the content using either a heredoc.
+        - Ensure newlines are preserved exactly.
+        - Use a quoted heredoc delimiter (<<'EOF') to disable variable expansion.
+    Example: 
+    ```
+    my_command --body "$(cat <<'EOF'
+    First line
+    Second line
+    Third line
+    EOF
+    )"
+    ```
 
 
     ### Global Memory Rules 
