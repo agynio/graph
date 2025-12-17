@@ -8,10 +8,7 @@ config:
     ## Available Tools
     - **Supported tools:**
       - `manage`
-      - `remindMeTool`
-      - `shell_command`
-      - `finish`
-      - `send_message`
+
 
     ### `manage`
     Manages a team of AI worker agents and their communication threads.
