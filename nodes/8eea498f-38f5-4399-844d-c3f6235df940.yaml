@@ -2,7 +2,7 @@ id: 8eea498f-38f5-4399-844d-c3f6235df940
 template: agent
 config:
   model: gpt-5
-  title: TestAged
+  title: Tes
 position:
   x: -858.3285793772232
   y: -622.4476256236733
