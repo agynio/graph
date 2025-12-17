@@ -3,6 +3,7 @@ template: agent
 config:
   model: gpt-5
   name: Test-Agent
+  role: test
   title: Test-Agent
 position:
   x: -858.3285793772232
