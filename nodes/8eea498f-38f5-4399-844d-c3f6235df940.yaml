@@ -5,8 +5,9 @@ config:
   name: Test-Agent
   role: test
   systemPrompt: |-
+    Your primary mission is to help an user by doing what he asks.
+
     ## Available Tools
-    - **Supported tools:**
       - `manage`
 
 
