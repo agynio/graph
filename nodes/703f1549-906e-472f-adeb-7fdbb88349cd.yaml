@@ -271,7 +271,7 @@ config:
     - When executing commands, do not wrap them in `bash -lc`.
     - When a CLI argument requires multi-line text:
         - Use command substitution to inline multi-line content.
-        - Generate the content using either a heredoc.
+        - Generate the content using a heredoc.
         - Ensure newlines are preserved exactly.
         - Use a quoted heredoc delimiter (<<'EOF') to disable variable expansion.
     Example: 
