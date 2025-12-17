@@ -30,9 +30,9 @@ config:
     ```
     manage(
       command="send_message",
-      worker="Emerson Gray",
+      worker="Rowan Stein",
       message="test message",
-      threadAlias="emerson-gray-example"
+      threadAlias="Rowan-Stein-example"
     )
     ```
   title: Test-Agent
