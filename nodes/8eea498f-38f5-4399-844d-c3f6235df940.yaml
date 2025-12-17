@@ -23,6 +23,18 @@ config:
         - This allows the worker to respond consistently regarding past outputs.
       - To start a **fresh, independent task**, create a **new unique `threadAlias`**, which resets the worker’s state.
       - Proper `threadAlias` usage is essential for stable, coherent multi-step workflows.
+
+
+    **Example:**
+
+    ```
+    manage(
+      command="send_message",
+      worker="Emerson Gray",
+      message="test message",
+      threadAlias="emerson-gray-example"
+    )
+    ```
   title: Test-Agent
 position:
   x: -858.3285793772232
