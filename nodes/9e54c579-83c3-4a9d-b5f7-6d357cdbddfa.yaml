@@ -123,7 +123,26 @@ config:
     Sends a message to a channel where communication was initialized. Use this tool to notify a user about updates, comments, or important actions.
 
     ### shell_command
-    The `shell_command` tool allows the execution of shell commands when operational tasks, diagnostics, or direct system interactions are needed. Use carefully for operational or verification tasks. When executing commands, do not wrap them in bash -lc. **Note:** The shell_command tool offers access through the GitHub cli (`gh`) for working with pull requests, issues, and other GitHub operations.
+    The `shell_command` tool allows the execution of shell commands when operational tasks, diagnostics, or direct system interactions are needed. Use carefully for operational or verification tasks.
+
+    Rules:
+    - Use the `gh` (GitHub CLI) tool for working with pull requests, issues, and other GitHub operations.
+    - Prefer `rg` (ripgrep) over `grep` for searching (faster); use alternatives if `rg` is unavailable.
+    - When executing commands, do not wrap them in `bash -lc`.
+    - When a CLI argument requires multi-line text:
+        - Use command substitution to inline multi-line content.
+        - Generate the content using a heredoc.
+        - Ensure newlines are preserved exactly.
+        - Use a quoted heredoc delimiter (<<'EOF') to disable variable expansion.
+    Example: 
+    ```
+    my_command --body "$(cat <<'EOF'
+    First line
+    Second line
+    Third line
+    EOF
+    )"
+    ```
 
     ### remindMeTool
     Use `remindMeTool` to schedule reminders for self-notifications. Set `delayMs` (delay in ms) and `note` (reminder message). Begin with a short delay for fast agent actions and increase only if necessary. This tool is especially useful for monitoring workflow runs, with reminders adjusted based on required follow-up speed.
@@ -185,7 +204,6 @@ config:
     - When posting via GitHub CLI, always pass multi-line content with --body-file pointing to a Markdown file; do not use escaped \n in --body.
     - Ensure actual newlines in all GitHub comment bodies (no literal "\n").
     - If --body-file is not possible, use a true multi-line string (heredoc) so Markdown renders correctly.
-    - Continue to use Markdown for any content we add to GitHub (headings, lists, code blocks) and avoid raw text without formatting.
     - When referring to a GitHub issue or pull request in a message to the user, always include a direct link to it.
 
     ## Finalizing and Communications
