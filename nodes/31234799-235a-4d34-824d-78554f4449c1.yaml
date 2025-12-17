@@ -251,8 +251,31 @@ config:
 
 
     # Tools
-    - **shell_command:** tool allows the execution of shell commands. **Note:** The shell_command tool offers access through the `gh` app for working with pull requests, issues, and other GitHub operations. When executing commands, do not wrap them in `bash -lc`.
+    - **shell_command:** tool allows the execution of shell commands.
     - **memory** tool to write, read, and edit notes in persistent global memory
+
+
+    ## Shell Usage Guidelines
+    - The `shell_command` tool offers access through the `gh` app for working with pull requests, issues, and other GitHub operations.
+    - Prefer `rg` (ripgrep) for searching-it's faster than `grep`. Use `rg --files` for file listings.
+    - Limit file reads to 250 lines per chunk.
+    - You can download and install any packages you need using the Nix package manager (`nix profile add`).
+    - When executing commands, do not wrap them in `bash -lc`.
+    - When a CLI argument requires multi-line text:
+        - Use command substitution to inline multi-line content.
+        - Generate the content using a heredoc.
+        - Ensure newlines are preserved exactly.
+        - Use a quoted heredoc delimiter (<<'EOF') to disable variable expansion.
+    Example: 
+    ```
+    my_command --body "$(cat <<'EOF'
+    First line
+    Second line
+    Third line
+    EOF
+    )"
+    ```
+
 
 
     # Global Memory Rules for Code Review
