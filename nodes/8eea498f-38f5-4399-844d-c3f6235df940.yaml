@@ -4,6 +4,27 @@ config:
   model: gpt-5
   name: Test-Agent
   role: test
+  systemPrompt: |-
+    ## Available Tools
+    - **Supported tools:**
+      - `manage`
+      - `remindMeTool`
+      - `shell_command`
+      - `finish`
+      - `send_message`
+
+    ### `manage`
+    Manages a team of AI worker agents and their communication threads.
+    - `send_message`
+      - Sends a message to a worker in a specific communication thread.
+      - The tool returns the **worker’s reply**, not a generic tool output.
+      - IMPORTANT: After producing its reply, the **worker becomes idle and stops working** until you send another `send_message` request to activate it again.
+      - Use Markdown formatting for a message.
+      - To maintain continuity and preserve the worker’s context:
+        - **Reuse the same `threadAlias`** when the worker continues or modifies previous work.
+        - This allows the worker to respond consistently regarding past outputs.
+      - To start a **fresh, independent task**, create a **new unique `threadAlias`**, which resets the worker’s state.
+      - Proper `threadAlias` usage is essential for stable, coherent multi-step workflows.
   title: Test-Agent
 position:
   x: -858.3285793772232
