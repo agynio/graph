@@ -122,6 +122,9 @@ config:
     ### `send_message`
     Sends a message to a channel where communication was initialized. Use this tool to notify a user about updates, comments, or important actions.
 
+    Rules:
+    - Use Markdown for a message body
+
     ### shell_command
     The `shell_command` tool allows the execution of shell commands when operational tasks, diagnostics, or direct system interactions are needed. Use carefully for operational or verification tasks.
 
