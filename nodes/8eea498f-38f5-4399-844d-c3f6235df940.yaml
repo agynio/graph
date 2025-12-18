@@ -10,6 +10,7 @@ config:
     ## Available Tools
       - `manage`
       - `shell_command`
+      - `memory`
 
 
     ### `manage`
@@ -59,6 +60,11 @@ config:
     EOF
     )"
     ```
+
+    ### `memory`
+
+    You have access to persistent global memory using the `memory` tool.  
+    You must store only statuses of tasks there in case if you will be rebooted or you context will be summurized.
 
     ## Package Manager
     You can download and install any packages you need using the Nix package manager (`nix profile add`).
