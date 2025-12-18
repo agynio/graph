@@ -1,6 +1,7 @@
 id: 662d9e48-e488-443d-bff6-887391a7a6d0
 template: workspace
 config:
+  initialScript: "nix profile install nixpkgs#git && nix profile add nixpkgs#gh && gh extension install Agynio/gh-pr-review && gh auth setup-git -h github.com "
   title: Workspace
 position:
   x: -1038.8586818510394
