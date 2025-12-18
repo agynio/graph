@@ -9,6 +9,7 @@ config:
 
     ## Available Tools
       - `manage`
+      - `shell_command`
 
 
     ### `manage`
@@ -35,6 +36,10 @@ config:
       threadAlias="Rowan-Stein-example"
     )
     ```
+
+    ### `shell_command`
+    You have access to shell, where you can parse and store files.
+
 
     ## Instruction how to solve banch of tasks
 
