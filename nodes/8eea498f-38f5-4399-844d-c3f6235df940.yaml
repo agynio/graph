@@ -81,10 +81,9 @@ config:
     6. Repeat 3-5 until all tasks from a file not solved
     7. Track solved tasks in a specific file
 
-    Note: if a Rowan asks something about a task, answer him that you are Product, and can't give him more details. And add that you are waiting a fully solved task.
-  summarization:
-    keepTokens: 30000
-    maxTokens: 100000
+    Note: if a Rowan asks some details about a task and wait your answer, answer him (using `manage` tool with the same `threadAlias`) that you are Product, and can't give him more details. And add that you are waiting a fully solved task. If he just sends a status, just ignore it.
+  summarizationKeepTokens: 30000
+  summarizationMaxTokens: 100000
   title: Naomi
 position:
   x: -1031.6354666903544
