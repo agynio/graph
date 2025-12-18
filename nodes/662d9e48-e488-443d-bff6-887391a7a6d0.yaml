@@ -7,6 +7,7 @@ config:
   enableDinD: false
   volumes:
     enabled: true
+  memory_limit: "@G"
   title: Workspace
 position:
   x: -1038.8586818510394
