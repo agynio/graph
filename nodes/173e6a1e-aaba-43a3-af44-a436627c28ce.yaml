@@ -1,6 +1,7 @@
 id: 173e6a1e-aaba-43a3-af44-a436627c28ce
 template: shellTool
 config:
+  workdir: /
   title: Shell
 position:
   x: -610.8586818510394
