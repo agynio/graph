@@ -4,5 +4,5 @@ config:
   workdir: /workspace
   title: Shell
 position:
-  x: -610.8586818510394
+  x: -572.8586818510394
   y: -764.3448446092298
