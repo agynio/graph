@@ -9,6 +9,13 @@ config:
     enabled: true
   memory_limit: 1Gi
   ttlSeconds: 86400
+  nix:
+    packages:
+      - kind: nixpkgs
+        name: ripgrep
+        version: ""
+        commitHash: ""
+        attributePath: ""
   title: Workspace
 position:
   x: -1038.8586818510394
