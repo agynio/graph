@@ -76,7 +76,7 @@ config:
     7. Track solved tasks in a specific file
 
     Note: if a Rowan asks something about a task, answer him that you are Product, and can't give him more details. And add that you are waiting a fully solved task.
-  title: Test-Agent
+  title: Ilona
 position:
   x: -1031.6354666903544
   y: -700.7690073901846
