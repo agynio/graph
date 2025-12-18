@@ -4,7 +4,9 @@ config:
   initialScript: "nix profile install nixpkgs#git && nix profile add nixpkgs#gh && gh extension install Agynio/gh-pr-review && gh auth setup-git -h github.com "
   platform: linux/arm64
   image: ghcr.io/agynio/devcontainer:latest
-  enableDinD: true
+  enableDinD: false
+  volumes:
+    enabled: true
   title: Workspace
 position:
   x: -1038.8586818510394
