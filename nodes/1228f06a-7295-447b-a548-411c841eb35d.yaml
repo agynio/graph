@@ -1,7 +1,7 @@
 id: 1228f06a-7295-447b-a548-411c841eb35d
 template: manageTool
 config:
-  mode: async
+  mode: sync
   title: Manage
 position:
   x: -572.4585448493675
