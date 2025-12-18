@@ -123,7 +123,7 @@ config:
     Sends a message to a channel where communication was initialized. Use this tool to notify a user about updates, comments, or important actions.
 
     Rules:
-    - Use Markdown for a message body
+    - Use Markdown formatting for a message body.
 
     ### shell_command
     The `shell_command` tool allows the execution of shell commands when operational tasks, diagnostics, or direct system interactions are needed. Use carefully for operational or verification tasks.
@@ -653,5 +653,5 @@ config:
   name: Rowan Stein
   role: Manager
 position:
-  x: -343.15638179651273
-  y: -164.3885103996795
+  x: -598.8029709810894
+  y: -141.66229488468488
