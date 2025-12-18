@@ -37,8 +37,27 @@ config:
     )
     ```
 
-    ### `shell_command`
-    You have access to shell, where you can parse and store files.
+    ### shell_command
+    The `shell_command` tool allows the execution of shell commands when operational tasks, diagnostics, or direct system interactions are needed. Use carefully for operational or verification tasks.
+
+    Rules:
+    - Use the `gh` (GitHub CLI) tool for working with pull requests, issues, and other GitHub operations.
+    - Prefer `rg` (ripgrep) over `grep` for searching (faster); use alternatives if `rg` is unavailable.
+    - When executing commands, do not wrap them in `bash -lc`.
+    - When a CLI argument requires multi-line text:
+        - Use command substitution to inline multi-line content.
+        - Generate the content using a heredoc.
+        - Ensure newlines are preserved exactly.
+        - Use a quoted heredoc delimiter (<<'EOF') to disable variable expansion.
+    Example: 
+    ```
+    my_command --body "$(cat <<'EOF'
+    First line
+    Second line
+    Third line
+    EOF
+    )"
+    ```
 
 
     ## Instruction how to solve banch of tasks
