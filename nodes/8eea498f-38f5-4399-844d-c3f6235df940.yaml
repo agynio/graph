@@ -84,6 +84,7 @@ config:
     Note: if a Rowan asks something about a task, answer him that you are Product, and can't give him more details. And add that you are waiting a fully solved task.
   summarization:
     keepTokens: 30000
+    maxTokens: 1000000
   title: Naomi
 position:
   x: -1031.6354666903544
