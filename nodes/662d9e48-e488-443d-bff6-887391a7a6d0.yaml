@@ -18,7 +18,7 @@ config:
         attributePath: ripgrep
   env:
     - name: GITHUB_TOKEN
-      value: secrets/nao/GITHUB_TOKEN
+      value: secrets/naom/GITHUB_TOKEN
   title: Workspace
 position:
   x: -1038.8586818510394
