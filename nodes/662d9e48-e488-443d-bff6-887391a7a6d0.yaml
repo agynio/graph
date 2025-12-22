@@ -17,7 +17,7 @@ config:
         commitHash: ee09932cedcef15aaf476f9343d1dea2cb77e261
         attributePath: ripgrep
   env:
-    - name: ""
+    - name: GITHUB_TOKEN
       value: secrets/casey/GITHUB_TOKEN
   title: Workspace
 position:
