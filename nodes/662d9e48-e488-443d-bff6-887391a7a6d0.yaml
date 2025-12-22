@@ -1,7 +1,7 @@
 id: 662d9e48-e488-443d-bff6-887391a7a6d0
 template: workspace
 config:
-  initialScript: "nix profile add nixpkgs#git && nix profile add nixpkgs#gh && gh extension add Agynio/gh-pr-review && gh auth setup-git -h github.com "
+  initialScript: "nix profile add nixpkgs#git && nix profile add nixpkgs#gh && gh extension install Agynio/gh-pr-review && gh auth setup-git -h github.com "
   platform: linux/arm64
   image: ghcr.io/agynio/devcontainer:latest
   enableDinD: false
