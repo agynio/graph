@@ -35,7 +35,7 @@ config:
         commitHash: d5faa84122bc0a1fd5d378492efce4e289f8eac1
         attributePath: ripgrep
   memory_limit: 8Gi
-  initialScript: "nix profile install nixpkgs#git && nix profile add nixpkgs#gh && gh extension install Agynio/gh-pr-review && gh auth setup-git -h github.com "
+  initialScript: "nix profile add nixpkgs#git && nix profile add nixpkgs#gh && gh extension add Agynio/gh-pr-review && gh auth setup-git -h github.com "
 position:
   x: 700.0303334133928
   y: -536.1736341580081
