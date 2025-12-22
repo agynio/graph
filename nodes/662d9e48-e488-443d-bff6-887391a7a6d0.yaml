@@ -18,7 +18,12 @@ config:
         attributePath: ripgrep
   env:
     - name: GITHUB_TOKEN
-      value: secrets/naomi/GITHUB_TOKEN
+      value:
+        kind: vault
+        path: naomi
+        key: GITHUB_TOKEN
+        mount: secrets
+      source: vault
   title: Workspace
 position:
   x: -1038.8586818510394
