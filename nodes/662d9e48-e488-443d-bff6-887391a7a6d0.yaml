@@ -16,6 +16,9 @@ config:
         version: 15.1.0
         commitHash: ee09932cedcef15aaf476f9343d1dea2cb77e261
         attributePath: ripgrep
+  env:
+    - name: ""
+      value: ""
   title: Workspace
 position:
   x: -1038.8586818510394
