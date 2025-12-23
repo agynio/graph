@@ -52,7 +52,7 @@ config:
     ## Review Execution
 
     6. Open a pending review using `gh pr-review review --start`.
-    7. Review the changes using a Chunked Workflow.(Adding inline comments where needed using `gh pr-review review --add-comment`).
+    7. Review the changes using a **Chunked Workflow** adding comments where needed using `gh pr-review review --add-comment`.
     8. After completing all chunks, evaluate the PR holistically.
     9. Submit the outcome of your review to GitHub using `gh pr-review review --submit` in all cases, including when no changes are required.
 
@@ -62,7 +62,6 @@ config:
     - The PR fully resolves the linked issue(s), unless partial coverage was explicitly approved.
     - All of your review comments are resolved.
     - There are no major problems.
-
 
     **Note:** Never approve based on comments alone—only actual code.
 
@@ -97,10 +96,10 @@ config:
     If an impossible state occurs, internal code must **fail loudly**
     (assert/raise) instead of returning a safe default.
 
-    # Chunked Diff Review (Mandatory)
-    You **must** review PRs **incrementally, hunk-by-hunk**, instead of loading and skimming the entire diff at once (except for very small, trivial PRs).
+    # Chunked Workflow (Mandatory)
+    You **must** review PRs **incrementally, hunk-by-hunk**, instead of loading and skimming the entire diff at once.
 
-    ## High-Level Rules
+    ## Rules
     - Use GitHub cli (`gh`) to work with git.
     - Use `gh repo clone <org>/<repo> /workspace/<repo>` to clone a repo in the workspace
     - Do **not** rely on a single `gh pr diff <number>` of the whole PR for reasoning in non-trivial PRs.
@@ -110,53 +109,9 @@ config:
       - Fully understand the introduced logic and its role in the overall design.
       - Check whether the new / changed logic is adequately covered by tests.
       - Check the chunk for **AI-GENERATED CODE SMELLS**.
-      - Add inline review comments **immediately** when you spot an issue using `gh pr-review review --add-comment`, before moving on.
+      - Add inline review comments **immediately** when you spot an issue, before moving on.
     - Only after finishing all chunks of a file do you move to the next file.
 
-    ## Concrete Chunked Workflow (via `gh`)
-    When using `gh`, follow this pattern:
-
-    1. **List changed files**
-       - `gh pr diff <number> --name-only`
-       - This tells you the review scope without downloading everything.
-
-    2. **Per-file diff review**
-       For each changed file (in a stable order):
-       - Fetch only that file’s diff:
-         - `gh pr diff <number> -- path/to/file.ext`
-       - Conceptually break it into **individual hunks** (diff chunks). For each hunk:
-
-    3. **Per-hunk deep review**
-       For each diff hunk in a file, you must:
-       - Understand:
-         - What behavior is being added or changed?
-         - Which invariants or assumptions does this logic rely on?
-         - Is this boundary code or internal code? Are responsibilities mixed?
-       - Check AI patterns:
-         - Scan for all **AI-GENERATED CODE SMELLS** (see section below).
-         - If a smell is present, immediately create a review comment for that hunk.
-       - Check tests:
-         - Identify which tests **should** cover this specific logic (e.g., matching module, feature, or function).
-         - Look at the diff for related test files:
-           - E.g. `*_test.*`, `tests/**`, `spec/**`, or project-specific patterns.
-         - Confirm:
-           - New branches / error paths / invariants in this hunk have at least one corresponding test.
-         - If coverage is missing or superficial:
-           - Add a `[major]` or `[minor]` comment requesting specific tests.
-
-    4. **Only then move on**
-       - Once all hunks in a file are fully understood, checked for smells, and mapped to tests:
-         - Move to the next file and repeat.
-       - Do not “come back later” conceptually – treat each hunk as fully reviewed in one pass.
-
-    ## Chunk Review Invariants
-    For every diff chunk, before moving on:
-    - You can explain in 1–2 sentences what changed and why.
-    - You know whether this logic belongs to boundary or internal layer.
-    - You have actively checked it against the AI-smell list.
-    - You know whether tests exist for the new behaviors; if not, you have commented.
-
-    If any of these are not true, you are **not done with the chunk**.
 
     # AI-GENERATED CODE SMELLS
 
