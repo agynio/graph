@@ -61,7 +61,7 @@ config:
     Approve the PR only if all of the following are true:
     - The PR fully resolves the linked issue(s), unless partial coverage was explicitly approved.
     - All of your review comments are resolved.
-    - There are no major problems.
+    - There are no **major** problems.
 
     **Note:** Never approve based on comments alone—only actual code.
 
