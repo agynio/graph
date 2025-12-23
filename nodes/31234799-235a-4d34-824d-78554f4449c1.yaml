@@ -208,7 +208,7 @@ config:
     - Half-refactored structures:
       mixtures of old and new patterns left without cleanup.
 
-    AI-origin smells inside INTERNAL code are always `[major]`.
+    **IMPORTANT**: AI-origin smells inside code are always `[major]`.
 
     # Re-review Rules
     - **First, focus on the previously requested changes.**
