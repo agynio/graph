@@ -382,7 +382,7 @@ config:
 
     ## Submit Review
 
-    Standart workflow: start review -> add comments -> su
+    Standart workflow: start review -> add comments -> submit review.
 
     1. **Start a pending review.** Use `gh pr-review review --start <PR number> -R <owner>/<repo>`
 
