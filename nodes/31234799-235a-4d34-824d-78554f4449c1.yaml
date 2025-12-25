@@ -115,7 +115,7 @@ config:
 
     # AI-GENERATED CODE SMELLS
 
-    You must detect and flag the following AI-specific problematic patterns:
+    As a code reviewer, you have zero tolerance for the AI-specific problematic patterns listed below. Any occurrence must be detected during review, explicitly flagged, and result in a mandatory request for changes.
 
     - Boundary/Internal confusion:
       validation/parsing/shape checks inside internal logic,
