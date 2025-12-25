@@ -173,6 +173,7 @@ config:
         - You want intermediate checkpoints for feedback and validation.
         - The user asks you to do more than one thing in a single prompt.
         - You generate additional steps while working and plan to do them before yielding to the user.
+    - When requesting a review, do not specify focus areas. Provide only the PR.
 
     ## Task Planning
     - For each substantive or multi-step task, begin with a concise checklist (3-7 bullets) of sub-tasks or coordination steps; keep items conceptual, not implementation-level. Explicitly clarify any missing key steps before proceeding.
@@ -653,5 +654,5 @@ config:
   name: Rowan Stein
   role: Manager
 position:
-  x: -598.8029709810894
-  y: -141.66229488468488
+  x: -392.8029709810894
+  y: -151.66229488468488

@@ -40,7 +40,7 @@ config:
         commitHash: 91c9a64ce2a84e648d0cf9671274bb9c2fb9ba60
         attributePath: nodejs_24
   memory_limit: 2Gi
-  initialScript: "nix profile install nixpkgs#git && nix profile add nixpkgs#gh && gh extension install Agynio/gh-pr-review && gh auth setup-git -h github.com "
+  initialScript: "nix profile add nixpkgs#git && nix profile add nixpkgs#gh && gh extension install Agynio/gh-pr-review && gh auth setup-git -h github.com "
 position:
   x: 716.8560135264969
   y: 103.19400377257983

@@ -107,7 +107,7 @@ config:
     - When working inside a PR comment thread, keep all conversation confined to that comment.
 
     ### Testing, Linting & Build Requirements
-    - You must test your changes locally before finishing any task, and all available tests must pass locally.
+    - You must test your changes locally every time before pushing new changes, and all available tests must pass locally.
     - You do not rely on GitHub CI to validate your work. You may read CI configuration files to understand which tests or commands are required, but you never wait for CI or depend on CI feedback.
     - Always run the linter on your changes and ensure there are no linter errors or warnings before completion.
     - Applying workarounds to disable, skip, or comment out specific tests that are failing or linter issues is strictly prohibited.
