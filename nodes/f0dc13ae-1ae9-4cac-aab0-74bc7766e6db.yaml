@@ -3,24 +3,13 @@ template: workspace
 config:
   image: ghcr.io/agynio/devcontainer:latest
   env:
-    - name: DOPPLER_TOKEN
-      value:
-        kind: vault
-        mount: secrets
-        path: doppler
-        key: DOPPLER_TOKEN
     - name: GITHUB_TOKEN
       value:
         kind: vault
         mount: secrets
         path: rowan
         key: GITHUB_TOKEN
-    - name: GITHUB_PERSONAL_ACCESS_TOKEN
-      value:
-        kind: vault
-        mount: secrets
-        path: rowan
-        key: GITHUB_TOKEN
+      source: vault
   platform: linux/arm64
   enableDinD: false
   ttlSeconds: 86400
@@ -41,6 +30,7 @@ config:
         attributePath: nodejs_24
   memory_limit: 2Gi
   initialScript: "nix profile add nixpkgs#git && nix profile add nixpkgs#gh && gh extension install Agynio/gh-pr-review && gh auth setup-git -h github.com "
+  title: Rowan's-workspace
 position:
-  x: -350.36556764073254
-  y: 202.73208400188992
+  x: -726.3655676407325
+  y: 32.732084001889916

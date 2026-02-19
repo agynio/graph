@@ -3,24 +3,20 @@ template: workspace
 config:
   image: ghcr.io/agynio/devcontainer:latest
   env:
-    - name: DOPPLER_TOKEN
-      value:
-        kind: vault
-        mount: secrets
-        path: doppler
-        key: DOPPLER_TOKEN
     - name: GITHUB_TOKEN
       value:
         kind: vault
         mount: secrets
         path: emerson
         key: GITHUB_TOKEN
+      source: vault
     - name: GITHUB_PERSONAL_ACCESS_TOKEN
       value:
         kind: vault
         mount: secrets
         path: emerson
         key: GITHUB_TOKEN
+      source: vault
   platform: linux/arm64
   enableDinD: true
   ttlSeconds: 86400
@@ -41,6 +37,7 @@ config:
         attributePath: nodejs_24
   memory_limit: 2Gi
   initialScript: "nix profile add nixpkgs#git && nix profile add nixpkgs#gh && gh extension install Agynio/gh-pr-review && gh auth setup-git -h github.com "
+  title: Emerson's-workspace
 position:
-  x: 716.8560135264969
-  y: 103.19400377257983
+  x: 358.8560135264969
+  y: 33.19400377257983

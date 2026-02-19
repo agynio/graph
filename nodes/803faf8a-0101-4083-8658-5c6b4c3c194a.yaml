@@ -3,24 +3,13 @@ template: workspace
 config:
   image: ghcr.io/agynio/devcontainer:latest
   env:
-    - name: DOPPLER_TOKEN
-      value:
-        kind: vault
-        mount: secrets
-        path: doppler
-        key: DOPPLER_TOKEN
     - name: GITHUB_TOKEN
       value:
         kind: vault
         mount: secrets
         path: noa
         key: GITHUB_TOKEN
-    - name: GITHUB_PERSONAL_ACCESS_TOKEN
-      value:
-        kind: vault
-        mount: secrets
-        path: noa
-        key: GITHUB_TOKEN
+      source: vault
   platform: linux/arm64
   enableDinD: false
   ttlSeconds: 86400
@@ -31,6 +20,7 @@ config:
     packages: []
   memory_limit: 2Gi
   initialScript: "nix profile add nixpkgs#git && nix profile add nixpkgs#gh && gh extension install Agynio/gh-pr-review && gh auth setup-git -h github.com "
+  title: Noa's-workspace
 position:
-  x: 719.84943936356
-  y: 684.0328414145539
+  x: 387.84943936356
+  y: 660.0328414145539
