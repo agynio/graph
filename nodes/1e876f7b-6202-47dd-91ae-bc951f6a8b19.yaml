@@ -2,14 +2,7 @@ id: 1e876f7b-6202-47dd-91ae-bc951f6a8b19
 template: workspace
 config:
   image: ghcr.io/agynio/devcontainer:latest
-  env:
-    - name: GITHUB_TOKEN
-      value:
-        kind: vault
-        mount: secrets
-        path: casey
-        key: GITHUB_TOKEN
-      source: vault
+  env: []
   platform: linux/arm64
   enableDinD: true
   ttlSeconds: 86400
@@ -27,5 +20,5 @@ config:
   initialScript: "nix profile add nixpkgs#git && nix profile add nixpkgs#gh && gh extension install Agynio/gh-pr-review && gh auth setup-git -h github.com "
   title: Casey's-workspace
 position:
-  x: 352.0303334133928
-  y: -596.1736341580081
+  x: -487.9696665866072
+  y: -416.1736341580081

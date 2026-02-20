@@ -1,17 +1,9 @@
-id: a78adb28-0fd3-4abd-84bf-6a5b74797002
+id: a6cc756e-8e21-4505-a5bc-09cf34e1718f
 template: mcpServer
 config:
-  title: codex tools
-  namespace: codex
-  command: " curl -fsSL https://github.com/HautechAI/codex-tools-mcp/releases/download/v0.1.0/codex-tools-mcp__linux_arm64.tar.gz -o codex-tools-mcp.tar.gz && tar -xzf codex-tools-mcp.tar.gz && chmod +x codex-tools-mcp && rm -f codex-tools-mcp.tar.gz && ./codex-tools-mcp"
-  env: []
-  restart:
-    maxAttempts: 5
-    backoffMs: 2000
-  requestTimeoutMs: 15000
-  startupTimeoutMs: 15000
-  heartbeatIntervalMs: 300000
-  staleTimeoutMs: 0
+  command: curl -fsSL https://github.com/HautechAI/codex-tools-mcp/releases/download/v0.1.0/codex-tools-mcp__linux_arm64.tar.gz -o codex-tools-mcp.tar.gz && tar -xzf codex-tools-mcp.tar.gz && chmod +x codex-tools-mcp && rm -f codex-tools-mcp.tar.gz && ./codex-tools-mcp
+  namespace: codex-mcp
+  title: MCP Server
 state:
   mcp:
     tools:
@@ -118,10 +110,7 @@ state:
           required:
             - input
           additionalProperties: false
-    toolsUpdatedAt: 1763214622729
-    enabledTools:
-      - update_plan
-      - apply_patch
+    toolsUpdatedAt: 1771595598209
 position:
-  x: 727.8953368749942
-  y: -236.46426606114636
+  x: -108.54392325978611
+  y: -780.2988234956862
