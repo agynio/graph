@@ -6,6 +6,7 @@ config:
   idleTimeoutMs: 60000
   workdir: /workspace
   outputLimitChars: 50000
+  title: ""
 position:
-  x: 721.3304377147065
-  y: -716.0877350439077
+  x: -111.66956228529352
+  y: -584.0877350439077
